@@ -1,0 +1,429 @@
+/* ALL SITE */
+@font-face {
+   font-family: 'Sun Valley';
+   src: url('SunValley.woff2') format('woff2'),
+       url('SunValley.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ padding:0;
+ margin:0;
+ letter-spacing: 1.5px;
+ font-size: 18px;
+ line-height:25px;
+ background-size: 100%;
+ background-repeat:no-repeat;
+ background-position: top;
+ background-attachment: fixed;
+ background-size: cover;
+}
+/* ***** BACKGROUNDS
+/* base background */
+#background_1{
+ background-size: 100%;
+ background-image: url(images/live.jpg);
+ background-repeat:no-repeat;
+ background-position: top;
+ background-attachment: fixed;
+ background-size: cover;
+}
+/* Profile cards */
+.card-shadow{
+ color: grey;
+}
+.back-card{
+ color: white;
+ width: 100%;
+ height: 220;
+}
+.card-body{
+}
+.card-text{
+}
+/*div class="d-flex justify-content-between align-items-center">
+
+/********** BUTTONS
+/* Main Buttons */
+.btn-group{
+  margin: 50px 0 10px 0;
+  text-align: center;
+}
+.btn-group button {
+    background-color: #FFFFFF;
+    width: 130px;
+    color: black;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-size:22px;
+    margin: 2px;
+}
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-group2 button:hover {
+    background-color:rgba(255, 255, 255, 0.8);
+}
+.btn-group2 button:hover {
+    background-color:rgba(255, 255, 255, 0.8);
+}
+/* Links */
+a{
+ color: #1c3a6b;
+ text-decoration: none;
+ font-size:20px;
+}
+a:hover{
+ color:#6BA0BB;
+}
+
+/* Containers  */
+.container{
+ width:95%;
+ margin:auto;
+ overflow:hidden;
+}
+/* Containers */
+.containerm {
+    color: #FFFFFF;
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 140px;
+}
+.containernav{
+ width:95%;
+ margin:auto;
+ position: fixed;
+ top: 0;
+}
+.header {width:95%;}
+.container1{
+ width:80%;
+ margin:auto;
+ overflow:hidden;
+}
+.container2{
+ width:60%;
+ margin:auto;
+ overflow:hidden;
+}
+/* Header  */
+header {
+ min-height:670px;
+ text-align:center;
+ color: white;
+ margin:0;
+}
+body h1{
+ margin: 0;
+ font-size: 8vw;
+ padding: 150px 10px 20px 0;
+ line-height: 50px;
+ font-family: 'Sun Valley';
+ text-align: center;
+ color: white;
+ }
+}
+
+header h2{
+ font-size: 1em;
+ font-family: 'Sun Valley';
+}
+header h3{
+ margin: 0;
+ padding-top: 80px;
+ font-size: 40px;
+ color: white;
+ line-height: 40px;
+}
+header h4{
+ margin:0;
+ font-size: 2em;
+ padding-top: 170px;
+ padding:10px 0 0 20px;
+ font-size: 40px;
+}
+
+/***************** NAV */
+.navbutton{display:none;
+}
+nav li{
+ font-size: 18px;
+ float:left;
+ display:inline;
+ padding: 0 20px 0 20px;
+}
+nav h4{
+ margin: 0 0 20px 0;
+}
+nav ul{
+ margin: 0;
+ padding:10px;
+}
+nav{
+ display: inline;
+ float:right;
+ padding:10px;
+ margin-top: 30px;
+}
+nav .highlight, nav .current a{
+ color: #cccccc;
+}
+nav:hover{
+ background-color:rgba(255, 255, 255, 0.6);
+}
+/* dropdown */
+.dropbtn {
+ font-size: 20px;
+ z-index: 1;
+ color: #1c3a6b;}
+.dropdown {
+ position:relative;
+ display:block;
+ float:right;
+}
+.dropdown-content {
+ display: none;
+ position: absolute;
+ right: 0;
+ background-color: white;
+ min-width: 70px;
+ z-index: 1;
+}
+.dropdown-content a {
+ padding: 12px 14px;
+ display: block;
+}
+.dropdown-content a:hover {
+ background-color: #D9E8F2
+}
+.dropdown:hover .dropdown-content {
+ display: block;
+}
+/* Logo */
+#logo img{
+ float: left;
+ width: 25%;
+ padding: 18px;
+ opacity: 0.8;
+}
+/* Sidebar */
+#sidebar{
+ position: fixed;
+ top: 85px;
+ padding: 20px;
+ float: top;
+ width: 50px;
+ margin:0;
+}
+#sidebar img{
+ width:50px;
+ height:50px;
+}
+#sidebar img:hover{
+opacity: 0.8;
+}
+/* image boxes */
+.boxes h3{
+ color: #1A3958;text-align: center;
+}
+.boxes p{ text-align: center;}
+.boxes {
+ display: flex;
+ flex-wrap: nowrap;
+ justify-content: center;
+}
+
+.contactboxes {
+ display: flex;
+ justify-content: center;
+ align-items: stretch;
+}
+
+.boxes #box img{
+ height:380px;
+}
+
+.boxes #box2 img{
+ margin:auto;
+ display: inline;
+ width: 25%;
+ float:left;
+ padding: 20px 0 60px 0;
+}
+.boxes #box3 img{
+   height:380px;
+}
+
+.flex-container{
+ display: flex;
+ flex-flow: row wrap;
+}
+
+/* FOOTER */
+footer {
+ background-color: white;
+ width:100%;
+ margin:auto;
+ overflow:hidden;
+}
+footer img{
+ padding: 50px 50px 0px 0;
+ height:60px;
+ float:right;
+ border-color: #1A3958;
+}
+.footersm{
+ display:none;
+}
+footer img:hover{
+opacity: 0.6;
+}
+#footer2{
+ font-size: 10px;
+ line-height: 3px;
+ float:left;
+ padding: 20px 0 10px 20px;
+ color:#1A3958;
+ text-align:left;
+}
+small{
+ color:rgba(26, 57, 88, 0.4);
+}
+
+/* MEDIA QUERIES - Medium */
+@media screen and (max-width: 1000px) {
+ /* Nav */
+ .containernav{position:static;}
+ nav li, a{font-size: 1em;}
+ div.dropbtn {font-size: 1em;}
+ /* Side Bar */
+ #sidebar{top: 55px;}
+ #sidebar img{
+   display: inline-block;
+   width:70%;
+   height:70%;}
+ /*  Boxes  */
+ section.boxes #box img{
+   height:350px;}
+ /* Section body */
+ body h2{font-size: 1.1em; padding: 0 0 10px 20px; text-align: center;}
+ body h3{font-size: 1em; padding: 0 5px 0 5px; text-align: center;}
+ div.container1 p{ font-size: 0.8em; padding: 0 10px 0 21px;}
+ body tr{ overflow: visible;}
+ body th{ font-size: 1em; padding: 2% 1% 0 1%;}
+ body td{ font-size: 0.9em; padding: 2% 1% 0 1%;}
+ div.container2 p{ font-size: 1em;}
+ div.content3 { padding: 10% 0 10% 0;}
+ /* Header */
+ header {min-height:600px;}
+ header h1{padding: 40% 0 10% 0; }
+ /*logo */
+ #logo img{width: 30%;}
+ /*  Table  */
+ #table { padding: 0 0 5% 0;
+ float:none;
+ text-align: center;
+ width: 90%;}
+ /*  footer */
+ footer img{
+   padding: 10% 0 10% 10%;
+   height:25px;}
+ #footer2 {
+   line-height: 1px;}
+}
+
+/*********   Media Queries - SMALL */
+@media screen and (max-width: 625px)  {
+
+ /* Body */
+ body{
+   letter-spacing: 1px;
+    background-size: cover;
+    background-size: 10%;
+    background-repeat:no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;}
+
+ /* Nav   */
+ nav{ display:none;}
+ div.navbutton{
+   display:inline;
+   float:right;
+   margin: 1% 1% 0 1%;
+   width:30px;}
+   .dropdown-content {
+   margin: 0px 10px 0 0;
+   min-width: 9%;
+   background-color:rgba(255, 255, 255, 0.8);
+}
+ .dropdown-content a {
+   padding: 10px 10px 10px 10px;
+   text-align: left; }
+
+ /*sidebar*/
+ #sidebar {
+   display: none;}
+ /*  Boxes  */
+ section.boxes #box img{
+   height:180px;}
+ /* body */
+ h4{
+   font-size: 0.5em;
+ }
+ body h2{font-size: 0.9em;
+ line-height: 30px;}
+ body h3{font-size: 0.8em; padding: 0 5px 0 5px; text-align: center;}
+ body tr{ overflow: visible;}
+ body th{ font-size: 0.9em;}
+ body td{ font-size: 0.8em;}
+ /*  Containers  */
+ div.container1{
+     width:90%;
+     margin:auto;
+     overflow:hidden;}
+ div.container1 p{ font-size: 0.8em; }
+ div.container2 p{ font-size: 0.8em; }
+ /* Header */
+ header {min-height:400px;}
+
+ #headerab{padding: 25% 0 5% 0;}
+ header h1{padding: 20% 0 5% 0;}
+ header h4{ padding: 0% 0 10% 0;}
+
+ /*  footer */
+ footer img{
+   padding: 10% 5% 10%;
+   height:30px;
+ }
+ .footersm{
+   display:inline;
+   float:left;
+   padding:40px 0 0 0;
+   }
+ .boxes p{
+   font-size: 15px;
+ }
+ .boxes #box3 img{
+   height: 120px;
+ }
+ .body h1{
+   font-size: 10vw;
+   }

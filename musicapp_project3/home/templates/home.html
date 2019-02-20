@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{# Home Page - check if student or tutor #}
+  <h2>Welcome!</h2>
+
+  {% if request.user.tutor %}
+  <h4>Search for a Tutor..</h4>
+
+  {% elif request.user.tutor%}
+  <h4>Search for Students..</h4>
+
+  {% endif %}
