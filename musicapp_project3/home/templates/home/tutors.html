@@ -2,14 +2,12 @@
 
 <h4> All Tutors </h4>
 
-
 {# loop through all tutors #}
 {% for tutors in tutors.all %}
 
 {# show all tutors names and profile pic #}
 
   <div class="flex-container">
-
       <div class="card-shadow">
         <img class="back-card" preserveAspectRatio="xMidYMid slice" src="{{ tutors.profile_pic.url }}">
         <div class="card-body">
@@ -20,5 +18,8 @@
       </div>
     </div>
   </div>
+
+
+</section>
 
 {% endfor %}

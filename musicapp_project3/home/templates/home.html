@@ -1,12 +1,40 @@
 {% extends "base.html" %}
 
 {# Home Page - check if student or tutor #}
-  <h2>Welcome!</h2>
+{% block content %}
 
-  {% if request.user.tutor %}
-  <h4>Search for a Tutor..</h4>
+  {# ADD constraints depending on who has logged in #}
 
-  {% elif request.user.tutor%}
-  <h4>Search for Students..</h4>
 
-  {% endif %}
+<h1> Home Page </h1>
+
+  {# loop through all tutors #}
+  {% for tutors in tutors.all %}
+
+
+  <section class="content2">
+    <section class="boxes">
+        <span id="box"><h2>{{ tutors.name }}</h2>
+          <p>{{ tutors.instrument }}</p>
+          <a href="profile.html" alt="Profile">
+          <img src="{{ tutors.profile_pic.url }}"></a>
+        </span>
+    </section>
+  </section>
+{% endfor %}
+
+{# loop through all students #}
+{% for tutors in students.all %}
+
+<section class="content2">
+  <section class="boxes">
+      <span id="box"><h2>{{ tutors.name }}</h2>
+        <p>{{ tutors.instrument }}</p>
+        <a href="profile.html" alt="Profile">
+        <img src="{{ tutors.profile_pic.url }}"></a>
+      </span>
+  </section>
+</section>
+{% endfor %}
+
+{% endblock %}

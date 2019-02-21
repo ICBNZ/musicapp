@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 {% if form.errors %}
@@ -15,26 +15,45 @@
   {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
+        <!--  LOGIN / SIGN UP BUTTONS  -->
+        <div class="btn-group">
+        <button class="button1">Login</button>
+        <button class="button1">Sign Up</button>
+        </div>
+        </header>
 
-<tr>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</tr>
+        <!--  PROFILE BOXES      -->
+        <section class="content2">
+        <section class="boxes">
+        <span id="box"><h2>Name</h2>
+          <p>Instrument</p>
+          <a href="profile.html" alt="Profile"></a>
+          <img src="{% static 'images/drums.jpg' %}"/>
+        </span>
+        </section>
+        </section>
 
-<tr>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</tr>
-</table>
+    <!-- MODAL 1 - LOGIN -->
+    <section id="modal" class="containerm">
+    <!-- Close Modal button -->
+    <span id="close" class="close">&times;</span>
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+        <!-- Modal 1 login form -->
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+        <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <td>{{ form.password }}</td>
+        </tr>
+        </table>
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        </section>
 {% endblock %}

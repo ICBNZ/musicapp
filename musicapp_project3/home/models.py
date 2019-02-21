@@ -29,7 +29,6 @@ class Student(models.Model):
     profile_pic = models.ImageField(upload_to="images/", default="concert.jpg") # pip3 install pillow
     extra_pic = models.ImageField(upload_to="images/", default="concert.jpg")
     name = models.CharField(max_length=150)
-    instrument = models.CharField(max_length=150)
     about = models.TextField()
     instrument_req = models.BooleanField()
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)

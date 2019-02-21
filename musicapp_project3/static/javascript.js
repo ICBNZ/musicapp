@@ -16,6 +16,7 @@ window.onclick = function(event) {
         b[i].style.visibility = "";
     }
   }
+  // if open button clicked
   if (event.target == btn[0] ) {
       m[0].style.display='block';
       hideB();
@@ -28,6 +29,7 @@ window.onclick = function(event) {
       m[2].style.display='block';
       hideB();
     }
+  // if close button clicked
   if (event.target == c[0] ) {
       m[0].style.display='none';
       showB();
@@ -40,18 +42,6 @@ window.onclick = function(event) {
       m[2].style.display='none';
       showB();
     }
-  if (event.target == m[0] ) {
-      m[0].style.display='none';
-      showB();
-    }
-  if (event.target == m[1] ) {
-      m[1].style.display='none';
-      showB();
-    }
-  if (event.target == m[2] ) {
-      m[2].style.display='none';
-      showB();
-    }
 
 }
 
@@ -59,7 +49,7 @@ window.onclick = function(event) {
 var loginform = document.getElementById("loginform");
 // Focus
 loginform.addEventListener("focus", function( event ) {
-  event.target.style.background = "";
+  event.target.style.background = "grey";
 }, true);
 
 // Blur

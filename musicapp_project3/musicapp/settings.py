@@ -121,7 +121,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
 # Additional locations of static files
 #STATICFILES_DIRS = '/home/static',
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL ='/home/'
