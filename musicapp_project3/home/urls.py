@@ -7,17 +7,15 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('home', views.home, name='home'),
-    path('tutors/', views.tutors, name='tutors'),
-    path('students/', views.students, name = 'students'),
-
-
-
-
-
-    #path('tutors', views.tutors, name="tutors"),
-    #path('students', views.tutors, name="students"),
-    #path('tutor/<int:pk>', views.tutors, name='tour_detail'),
-    #path('student/<int:id>', views.agent_account, name='agent_account'),
-
 
 ]
+
+
+
+
+'''
+path('tutor/<id>', views.TutorSearchView.as_view(), name='tutors'),
+path('tutors', views.tutor, name='tutors'),
+path('students', views.student, name='students'),
+path('student/<id>', views.StudentSearchView.as_view(), name='student'),
+'''

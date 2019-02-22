@@ -1,59 +1,76 @@
-{% extends "base.html" %}
 {% load static %}
-{% block content %}
+<html lang="en-US">
+<!-- HEAD -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Instrumentor</title>
+    {% load static %}
+    <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
+  </head>
+     <!-- BODY -->
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+    <body id="background_1">
+      <header>
+            <!-- MAIN TITLE -->
+            <h1 id="home">Instrumentor</h1>
+            <br>
+            <i><p>When it comes to instruments,<br>  mentorship is instrumental</p></i>
+      </header>
 
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-  {% else %}
-    <p>Please login to see this page.</p>
-  {% endif %}
-{% endif %}
+      <div id ="maincontent">
+        {% block content %}
+            {% if form.errors %}
+              <p>Your username and password didn't match. Please try again.</p>
+            {% endif %}
+            {% if next %}
+            {% if user.is_authenticated %}
+              <p>Your account doesn't have access to this page. To proceed,
+              please login with an account that has access.</p>
+            {% else %}
+            {% endif %}
+          {% endif %}
 
         <!--  LOGIN / SIGN UP BUTTONS  -->
         <div class="btn-group">
-        <button class="button1">Login</button>
-        <button class="button1">Sign Up</button>
+          <button class="button1">Login</button>
+          <button class="button1">Sign Up</button>
         </div>
-        </header>
 
-        <!--  PROFILE BOXES      -->
-        <section class="content2">
-        <section class="boxes">
-        <span id="box"><h2>Name</h2>
-          <p>Instrument</p>
-          <a href="profile.html" alt="Profile"></a>
-          <img src="{% static 'images/drums.jpg' %}"/>
-        </span>
-        </section>
-        </section>
-
-    <!-- MODAL 1 - LOGIN -->
-    <section id="modal" class="containerm">
-    <!-- Close Modal button -->
-    <span id="close" class="close">&times;</span>
+      <!-- MODAL 1 - LOGIN -->
+      <section id="modal" class="containerm">
+          <!-- Close Modal button -->
+          <span id="close" class="close">&times;</span>
 
         <!-- Modal 1 login form -->
-        <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <table>
-        <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-        </tr>
-        </table>
-        <input type="submit" value="login" />
-        <input type="hidden" name="next" value="{{ next }}" />
+        <form class="login" method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <table>
+          <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+          </tr>
+          <tr>
+          <td>{{ form.password.label_tag }}</td>
+          <td>{{ form.password }}</td>
+          </tr>
+          </table>
+          <button id="button1" type="submit" value="login">Login</button>
+          <input type="hidden" name="next" value="{{ next }}" />
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
         </form>
-        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-        </section>
-{% endblock %}
+
+      </section>
+    {% endblock %}
+    </div>
+
+
+
+      <!--FOOTER -->
+      <footer>
+      <p>&copy; Instrumentor 2019</p>
+      </footer>
+
+      <!-- Javascript  -->
+      <script src="{% static 'javascript.js' %}"></script>
+      </body>
+      </html>
