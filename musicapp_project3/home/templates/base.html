@@ -1,38 +1,30 @@
 {% load static %}
 <html lang="en-US">
-     <!-- HEAD -->
-     <head>
-        <meta charset="UTF-8">
-        <title>Instrumentor</title>
-        {% load static %}
-        <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
-     </head>
-  <header>
-    <div id="logo">
-      <h2>Instrumentor</h2>
-    </div>
-    <form class="logout-btn" action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-    <button id="button2" type="submit">Logout</button></form>
+<!-- HEAD -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Instrumentor</title>
+    {% load static %}
+      <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
+  </head>
+     <!-- BODY -->
+      <body id="background_1">
+        <header>
+          <!-- MAIN TITLE -->
+              <h1>Instrumentor</h1>
+              <br>
+              <i><p>When it comes to instruments, mentorship is instrumental</p></i>
+              {% block content %}
+              {% endblock %}
 
-    <!-- BODY -->
-    <body id="background_2">
-          <header>
-              <!-- MAIN TITLE -->
-              <h1>Welcome {{user.username}}</h1>
-        </header>
 
-        <div id ="maincontent">
-          {% block content %}
-          {% endblock %}
 
-        </div>
-          <!--FOOTER -->
-          <footer>
-          <p>&copy; Instrumentor 2019</p>
-          </footer>
+    <!--FOOTER -->
+    <footer>
+       <p>&copy; Instrumentor 2019</p>
+    </footer>
 
-          <!-- Javascript  -->
-          <script src="{% static 'javascript.js' %}"></script>
-    </body>
+    <!-- Javascript  -->
+  <script src="{% static 'javascript.js' %}"></script>
+  </body>
 </html>

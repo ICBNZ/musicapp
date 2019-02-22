@@ -8,52 +8,38 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 # functions to get objects, classname.objects - send to url, args
-#url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+'''edef login(request):
+    return render(request, 'login.html')
+'''
 
-#### Home - passing in tutor/students
+#### Home
 @login_required(login_url="/accounts/login/")
 def home(request):
-    tutors = Tutor.objects
-    students = Student.objects
-    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
+    return render(request, 'home.html')
 
-
-
-'''
-# profiles
-@login_required(login_url="/accounts/login/")
-def profiles(request):
-    user = request.user
-    return render(request, 'profile.html', {'user': user})
-
-
-@login_required(login_url="/accounts/login/")
+#### Tutors
 def tutors(request):
-    tutor = Tutor.objects
-    return render(request, 'tutor.html', {'tutor': tutor})
+    tutors = Tutor.objects
+    return render(request, 'tutors.html', {'tutors': tutors})
 
-
-@login_required(login_url="/accounts/login/")
-def tutor(request, id):
-    try:
-        user = User.objects.get(id=id)
-    except Tutor.DoesNotExist:
-        raise Http404('Tutor not found')
-    return render(request, 'profile.html', {'tutor': tutor})
-'''
+#### Students
+def students(request):
+    students = Student.objects
+    return render(request, 'students.html', {'students': students})
 
 
 ######## Class views
 from django.views import generic
 from django.views.generic import DetailView, TemplateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
-
+'''
 class TutorSearchView(generic.TemplateView):
-    template = 'profile.html'
+    template_name = 'tutors.html'
     model = Tutor
     #paginate_by = 10
 
 class StudentSearchView(generic.TemplateView):
-    template_name = 'profile.html'
+    template_name = 'students.html'
     model = Student
     #paginate_by = 10
+'''

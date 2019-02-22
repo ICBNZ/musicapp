@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<h4> All Tutors </h4>
+
+{# loop through all tutors #}
+{% for tutors in tutors.all %}
+
+{# show all tutors names and profile pic #}
+
+  <div class="flex-container">
+      <div class="card-shadow">
+        <img class="back-card" preserveAspectRatio="xMidYMid slice" src="{{ tutors.profile_pic.url }}">
+        <div class="card-body">
+          <p class="card-text">{{ tutors.name }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">{{ tutors.instrument }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+{% endfor %}
