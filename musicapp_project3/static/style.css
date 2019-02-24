@@ -2,16 +2,15 @@
 
 - Fontface
 - Body
-- Nav
-- Fonts
 - Backgrounds
+- Modals
+- Buttons
 - Containers
 - Header
-- Modals
-- Forms
-- Buttons
-- Boxes
+- Nav
 - Logo
+- Forms
+- Boxes
 - Footer
 
 **** Media Queries Medium
@@ -92,9 +91,13 @@ body h1 {
 /***** MODALS           */
 /* Close Modal Button */
 .close {
-    position: absolute;
-    right: 40px;
-    top: 40px;
+    position: relative;
+    left: 48%;
+    top: 0px;
+    -webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
     color: #000;
     font-size: 4em;
     font-weight: bold;
@@ -207,6 +210,7 @@ header {
  margin:0;
  padding-bottom: 50px;
 }
+
 header h2{
 
  text-align:center;
@@ -302,13 +306,25 @@ header h4{
 
 /******          FORM *****/
 .login{
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
   padding: 20px;
   margin: auto;
   border: none;
   width:50%;
   height: 60%;
-  overflow:scroll;
   text-align: center;
+}
+.signup{
+  position: relative;
+  background: rgba(141,145,147,0.8);
+  border-radius: 3px;
+  padding: 20px;
+  margin: auto;
+  border: none;
+  width: 50%;
+  overflow: none;
+  text-align: left;
 }
 label{
   color: white;
