@@ -18,6 +18,7 @@ class Tutor(models.Model):
     name = models.CharField(max_length=150)
     experience = models.TextField()
     instrument_avail = models.BooleanField()
+    price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
 

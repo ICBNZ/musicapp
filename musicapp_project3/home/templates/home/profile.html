@@ -38,10 +38,12 @@
       <ul>
         <br><p><b>Account Details</b></p>
         <p><b>Username:</b> {{ user.username|capfirst }}</p>
-        <p><b>Name:</b> {{ user.student.name|capfirst }}</p>
+        <p><b>Name:</b> {{ user.tutor.name|capfirst }}</p>
         <p><b>Email:</b> {{ user.email}} </p>
         <p><b>Instrument:</b> {{ user.tutor.instrument|capfirst }}</p>
         <p><b>Instrument Available:</b> {{ user.tutor.instrument_avail|capfirst }}</p>
+        <p><b>Instrument:</b> {{ user.tutor.instrument|capfirst }}</p>
+        <p><b>Price:</b> {{ user.tutor.price|capfirst }}</p>
         <br><p><b>Edit Details</b></p>
       </ul>
         <br><br>

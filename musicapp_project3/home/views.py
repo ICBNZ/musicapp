@@ -37,19 +37,22 @@ def signup(request):
 def profile(request, id):
     user = User.objects.get(id=id)
     return render(request, 'home/profile.html', {'user': user})
+
+
+######## Class views
+from django.views import generic
+from django.views.generic import DetailView, TemplateView
+#from django.contrib.auth.mixins import LoginRequiredMixin
+
+class AboutView(generic.TemplateView):
+    template_name = 'about.html';
+
+class TutorView(generic.DetailView):
+    model = Tutor;
 '''
-# Tutor Detail
-def tutor_detail(request, id):
-    try:
-        tutor = Tutor.objects.get(id=id)
-    except Tutor.DoesNotExist:
-        raise Http404('Tutor not found')
-    return render(request, 'tutor.html', {'tutor': tutor})
-
-
-
-
-
+class StudentSearchView(generic.TemplateView):
+    template_name = 'profile.html'
+    model = Student;
 @login_required(login_url="/accounts/login/")
 def tutor(request, id):
     try:
@@ -58,17 +61,6 @@ def tutor(request, id):
         raise Http404('Tutor not found')
     return render(request, 'profile.html', {'tutor': tutor})
 
-'''
 
-######## Class views
-from django.views import generic
-from django.views.generic import DetailView, TemplateView
-#from django.contrib.auth.mixins import LoginRequiredMixin
 
-class TutorView(generic.DetailView):
-    model = Tutor;
-'''
-class StudentSearchView(generic.TemplateView):
-    template_name = 'profile.html'
-    model = Student;
 '''
