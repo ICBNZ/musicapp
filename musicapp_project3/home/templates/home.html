@@ -16,7 +16,7 @@
         <span id="box">
 
           <div class="boxcontainer">
-            <a href="profile.html" alt="Profile">
+            <a href="{% url 'tutor' user.id %}" alt="Profile">
             <img src="{{ tutors.profile_pic.url }}"></a>
             <p>{{ tutors.name|capfirst }}</p>
               <p>{{ tutors.instrument|capfirst }}</p>

@@ -17,20 +17,22 @@ def home(request):
     students = Student.objects
     return render(request, 'home.html', {'tutors': tutors},  {'students': students})
 
-
-
+#### Logged In User Profile
+@login_required(login_url="/accounts/login/")
+def profile(request, id):
+    user = User.objects.get(id=id)
+    return render(request, 'home/profile.html', {'user': user})
 '''
-# profiles
-@login_required(login_url="/accounts/login/")
-def profiles(request):
-    user = request.user
-    return render(request, 'profile.html', {'user': user})
-
-
-@login_required(login_url="/accounts/login/")
-def tutors(request):
-    tutor = Tutor.objects
+# Tutor Detail
+def tutor_detail(request, id):
+    try:
+        tutor = Tutor.objects.get(id=id)
+    except Tutor.DoesNotExist:
+        raise Http404('Tutor not found')
     return render(request, 'tutor.html', {'tutor': tutor})
+
+
+
 
 
 @login_required(login_url="/accounts/login/")
@@ -40,20 +42,18 @@ def tutor(request, id):
     except Tutor.DoesNotExist:
         raise Http404('Tutor not found')
     return render(request, 'profile.html', {'tutor': tutor})
-'''
 
+'''
 
 ######## Class views
 from django.views import generic
 from django.views.generic import DetailView, TemplateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
 
-class TutorSearchView(generic.TemplateView):
-    template = 'profile.html'
-    model = Tutor
-    #paginate_by = 10
-
+class TutorView(generic.DetailView):
+    model = Tutor;
+'''
 class StudentSearchView(generic.TemplateView):
     template_name = 'profile.html'
-    model = Student
-    #paginate_by = 10
+    model = Student;
+'''

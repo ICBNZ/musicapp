@@ -2,10 +2,17 @@
 
 {% block content %}
 
-<p>You have successfully been logged out.</p>
+  <!--  Logged out - Log in again button  -->
+<div class="mainp">
+  <p>You have successfully been logged out.</p>
 
-<p><a href="{% url 'login' %}">Login again</a></p>
-
+  <div class="btn-group">
+    <button class="button1">
+      <a href="{% url 'login' %}">Login again</a>
+    </button>
+  </div>
+</div>
+</br>
 <br>
 
 {% endblock %}
