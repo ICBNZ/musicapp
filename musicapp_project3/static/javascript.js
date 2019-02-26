@@ -1,52 +1,51 @@
 // Buttons - Show/Hide Modals
 window.onclick = function(event) {
-  var btn = document.querySelectorAll(".button1");
-  var modal = document.querySelectorAll('#modal');
+  var b = document.querySelectorAll(".button1");
+  var m = document.querySelectorAll('#modal');
   var c = document.querySelectorAll('#close');
-  var m = [modal[0], modal[1], modal[2]];
-  var b = [btn[0], btn[1], btn[2]];
 
-  function hideB(){
-    for(var i=0; i < b.length; i++){
+  function hideAllButtons(){
+    if(b.length > 0){
+      for(var i=0; i < b.length; i++){
         b[i].style.visibility = "hidden";
+      }
     }
   }
-  function showB(){
-    for(var i=0; i < b.length; i++){
-        b[i].style.visibility = "";
+
+  function showAllButtons(){
+    if(b.length > 0){
+      for(var i=0; i < b.length; i++){
+        b[i].style.visibility = "visible";
+      }
     }
   }
-  // if open button clicked
-  if (event.target == btn[0] ) {
-      m[0].style.display='block';
-      hideB();
+
+  // when a button is pressed, hide all buttons and open corresponding modal
+  // check all buttons to see if it was the event target
+  for(var i=0; i < b.length; i++){
+    if(b[i] == event.target)
+    {
+      m[i].style.display="block";
+      hideAllButtons();
     }
-  if (event.target == btn[1] ) {
-      m[1].style.display='block';
-      hideB();
+  }
+  // when the close button is pressed, hide open modal and show all buttons
+  // check all close buttons to see if it was the event target
+  for(var i=0; i < c.length; i++){
+    if(c[i] == event.target)
+    {
+      m[i].style.display="none";
+      showAllButtons();
     }
-  if (event.target == btn[2] ) {
-      m[2].style.display='block';
-      hideB();
-    }
-  // if close button clicked
-  if (event.target == c[0] ) {
-      m[0].style.display='none';
-      showB();
-    }
-  if (event.target == c[1] ) {
-      m[1].style.display='none';
-      showB();
-    }
-  if (event.target == c[2] ) {
-      m[2].style.display='none';
-      showB();
-    }
+  }
 
 }
 
+// form focus styling
+
 // form
 var loginform = document.getElementById("loginform");
+
 // Focus
 loginform.addEventListener("focus", function( event ) {
   event.target.style.background = "grey";

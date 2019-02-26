@@ -33,14 +33,11 @@
         <!--  LOGIN / SIGN UP BUTTONS  -->
         <div class="btn-group">
           <button class="button1">Login</button>
-          <a href="../signup"><button class="button1">Sign Up</button></a>
+          <button class="button1">Sign Up</button>
         </div>
 
       <!-- MODAL 1 - LOGIN -->
       <section id="modal" class="containerm">
-          <!-- Close Modal button -->
-
-
         <!-- Modal 1 login form -->
         <div class="login">
           <span id="close" class="close">&times;</span>
@@ -57,6 +54,20 @@
             <button id="button1" type="submit" value="login">Login</button>
             <input type="hidden" name="next" value="{{ next }}" />
             <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        </form>
+      </div>
+
+      </section>
+
+      <!-- MODAL 2 - SIGNUP -->
+      <section id="modal" class="containerm">
+        <div class="login" style="min-height:200px;max-height:200px">
+          <span id="close" class="close">&times;</span>
+          <h2 style="text-align:center">Register as a...</h2>
+          <div class="btn-group">
+          <a href="../signup/student"><button class="button2">Student</button></a>
+          <a href="../signup/tutor"><button class="button2">Tutor</button></a>
+        </div>
         </form>
       </div>
 

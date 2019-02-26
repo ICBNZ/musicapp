@@ -1,0 +1,98 @@
+{% load static %}
+<html lang="en-US">
+<!-- HEAD -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Instrumentor</title>
+    {% load static %}
+    <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
+  </head>
+     <!-- BODY -->
+
+	<body id="background_1">
+    	<header style="min-height:150px;max-height:300px">
+        	<!-- MAIN TITLE -->
+        	<h1 id="home">Instrumentor</h1>
+        	<br>
+        	<i><p style="text-align: center">When it comes to instruments,<br>  mentorship is instrumental</p></i>
+    	</header>
+
+    	<div id ="maincontent">
+			<div class="signup">
+				<h2>Sign up</h2>
+  				<form method="post" enctype="multipart/form-data">
+    				{% csrf_token %}
+
+					  <div class="field-div">
+    			  	{{ form.email.label_tag }}
+  						{{ form.email}}
+  						{{ form.email.errors }}
+  					</div>
+    				<div class="field-div">
+    			  	{{ form.username.label_tag }}
+  						{{ form.username}}
+  						{{ form.username.errors }}
+  					</div>
+  					<div class="field-div">
+  						{{ form.password1.label_tag }}
+  						{{ form.password1}}
+  						{{ form.password1.errors }}
+  					</div>
+  					<div class="field-div">
+  						{{ form.password2.label_tag }}
+  						{{ form.password2}}
+  						{{ form.password2.errors }}
+  					</div>
+            <div class="field-div">
+              {{ form.profile_pic.label_tag }}
+              {{ form.profile_pic}}
+              {{ form.profile_pic.errors }}
+            </div>
+
+            <hr>
+
+            <div class="field-div">
+              {{ form.first_name.label_tag }}
+              {{ form.first_name}}
+              {{ form.first_name.errors }}
+            </div>
+            <div class="field-div">
+              {{ form.last_name.label_tag }}
+              {{ form.last_name}}
+              {{ form.last_name.errors }}
+            </div>
+            
+            <div class="field-div">
+              {{ form.experience.label_tag }}
+              {{ form.experience}}
+              {{ form.experience.errors }}
+            </div>
+            <div class="field-div">
+              {{ form.hourly_rate.label_tag }}
+              {{ form.hourly_rate}}
+              {{ form.hourly_rate.errors }}
+            </div>
+            <div class="field-div">
+              {{ form.instrument.label_tag }}
+              {{ form.instrument}}
+              {{ form.instrument.errors }}
+            </div>
+            <div class="field-div">
+              {{ form.instrument_available.label_tag }}
+              {{ form.instrument_available}}
+              {{ form.instrument_available.errors }}
+            </div>
+    			<button id="button1" type="submit">Sign up</button>
+  				</form>
+			</div>
+    	</div>
+
+    	<br>
+    	<br>
+
+      	<!--FOOTER -->
+      	<footer>
+      		<p>&copy; Instrumentor 2019</p>
+      	</footer>
+    </body>
+</html>
