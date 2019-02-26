@@ -12,12 +12,13 @@ from django.shortcuts import render, get_object_or_404
 # functions to get objects, classname.objects - send to url, args
 # url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
 
-## HOME - passing in tutor/students
+## HOME
 @login_required(login_url="/accounts/login/")
 def home(request):
     tutors = Tutor.objects.all()
     students = Student.objects.all()
     return render(request, 'home.html', {'tutors': tutors,'students': students,})
+
 
 ## FORMS
 # sign up form
@@ -93,7 +94,7 @@ def detail(request, instrument_type):
         {'all_instruments': all_instruments, 'all_availablitys': all_availablitys, \
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})
 
-
+## PROFILES VIEW/SEARCH
 ## Details
 @login_required(login_url="/accounts/login/")
 def tutor_detail(request, pk):
@@ -104,9 +105,27 @@ def tutor_detail(request, pk):
 def student_detail(request, pk):
     tutor = get_object_or_404(Post, pk=pk)
     return render(request, 'student_detail.html', {'student': student})
+'''
+## Search
+@login_required(login_url="/accounts/login/")
+def search(request):
+    tutor_search = ''
+    student_search = ''
+    tutors = Tutor.objects.all()
+    students = Student.objects.all()
 
+    # search bar
+    if 'student_search' in request.GET:
+        student_search = request.GET['student_search']
+        tutors = tutors.filter(Q(instrument__name__icontains=student_search))
+    elif 'tutor_search' in request.GET:
+        student_search = request.GET['student_search']
+        students = students.filter(Q(instruments__name__icontains=student_search))
 
-# Class Views
+    return render(request, 'home/search.html', {'tutors': tutors,'students': students,'student_search': student_search})
+'''
+
+# GENERIC VIEWS
 from django.views import generic
 from django.views.generic import DetailView, TemplateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
