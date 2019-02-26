@@ -24,8 +24,8 @@ def home(request):
         student_search = request.GET['student_search']
         tutors = tutors.filter(Q(instrument__name__icontains=student_search))
     elif 'tutor_search' in request.GET:
-            student_search = request.GET['student_search']
-            students = students.filter(Q(instruments__name__icontains=student_search))
+        student_search = request.GET['student_search']
+        students = students.filter(Q(instruments__name__icontains=student_search))
 
     return render(request, 'home.html', {'tutors': tutors,'students': students,'student_search': student_search})
 
