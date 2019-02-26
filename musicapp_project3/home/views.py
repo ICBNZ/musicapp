@@ -7,31 +7,20 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from home.forms import StudentSignUpForm, TutorSignUpForm
 from .models import Tutor, Instrument, Student, Hour, Availablity, Booking   # import all models
 from django.db.models import Q # import for searching
+from django.shortcuts import render, get_object_or_404
 
 # functions to get objects, classname.objects - send to url, args
-#url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+# url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
 
-#### Home - passing in tutor/students
+## HOME - passing in tutor/students
 @login_required(login_url="/accounts/login/")
 def home(request):
-    tutor_search = ''
-    student_search = ''
     tutors = Tutor.objects.all()
     students = Student.objects.all()
+    return render(request, 'home.html', {'tutors': tutors,'students': students,})
 
-    # search bar
-    if 'student_search' in request.GET:
-        student_search = request.GET['student_search']
-        tutors = tutors.filter(Q(instrument__name__icontains=student_search))
-    elif 'tutor_search' in request.GET:
-        student_search = request.GET['student_search']
-        students = students.filter(Q(instruments__name__icontains=student_search))
-
-    return render(request, 'home.html', {'tutors': tutors,'students': students,'student_search': student_search})
-
-
-
-#### sign up form
+## FORMS
+# sign up form
 def StudentSignup(request):
     if request.method == 'POST':
         form = StudentSignUpForm(request.POST, request.FILES)
@@ -55,7 +44,7 @@ def StudentSignup(request):
         form = StudentSignUpForm()
     return render(request, 'registration/studentsignup.html', {'form': form})
 
-#### tutor sign up form
+# tutor sign up form
 def TutorSignup(request):
     if request.method == 'POST':
         form = TutorSignUpForm(request.POST, request.FILES)
@@ -80,21 +69,21 @@ def TutorSignup(request):
         form = TutorSignUpForm()
     return render(request, 'registration/tutorsignup.html', {'form': form})
 
-#### Logged In User Profile
+## PROFILE
+# Logged In User Profile
 @login_required(login_url="/accounts/login/")
 def profile(request, id):
     user = User.objects.get(id=id)
     return render(request, 'home/profile.html', {'user': user})
 
-### Booking
+
+## BOOKING
 def schedule(request):
     all_instruments = Instrument.objects.all()
     tutors = Tutor.objects.all()
     all_hours = Hour.objects.all()
     return render(request, 'schedule.html', {'all_instruments': all_instruments, \
         'tutors': tutors, 'all_hours': all_hours})
-
-
 
 def detail(request, instrument_type):
     all_instruments = Instrument.objects.all()
@@ -105,6 +94,19 @@ def detail(request, instrument_type):
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})
 
 
+## Details
+@login_required(login_url="/accounts/login/")
+def tutor_detail(request, pk):
+    tutor = get_object_or_404(Post, pk=pk)
+    return render(request, 'tutor_detail.html', {'tutor': tutor})
+
+@login_required(login_url="/accounts/login/")
+def student_detail(request, pk):
+    tutor = get_object_or_404(Post, pk=pk)
+    return render(request, 'student_detail.html', {'student': student})
+
+
+# Class Views
 from django.views import generic
 from django.views.generic import DetailView, TemplateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
@@ -112,20 +114,14 @@ from django.views.generic import DetailView, TemplateView
 class AboutView(generic.TemplateView):
     template_name = 'about.html';
 
-class TutorView(generic.DetailView):
-    model = Tutor;
-'''
-class StudentSearchView(generic.TemplateView):
-    template_name = 'profile.html'
-    model = Student;
-@login_required(login_url="/accounts/login/")
-def tutor(request, id):
-    try:
-        user = User.objects.get(id=id)
-    except Tutor.DoesNotExist:
-        raise Http404('Tutor not found')
-    return render(request, 'profile.html', {'tutor': tutor})
+class TutorListView(generic.ListView):
+    model = Tutor
 
+class StudentListView(generic.ListView):
+    model = Student
 
+class TutorDetailView(generic.DetailView):
+    model = Tutor
 
-'''
+class StudentDetailView(generic.DetailView):
+    model = Student

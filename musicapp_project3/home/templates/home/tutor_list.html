@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{# All #}
+{% block content %}
+{# loop through all tutors #}
+<section class="content2">{# blue #}
+
+    <div class="flexbox">
+    {% for tutor in tutor_list %}
+     <section class="boxes">
+        <span id="box">
+
+          <div class="boxcontainer">
+
+            <a href="{% url 'tutor_detail' tutor.pk %}" alt="Profile">
+            <img src="{{ tutor.profile_pic.url }}"></a>
+
+            <p>{{ tutor.name|capfirst }}</p>
+            <p>{{ tutor.instrument|capfirst }}</p>
+          </div>
+        </span>
+      </section>
+      {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

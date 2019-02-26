@@ -1,0 +1,20 @@
+{% include "base.html" %}
+{% load static  %}
+{# Logged In User Profile #}
+{% block profile %}
+<section class="content3">{# blue #}
+<br>    <div class="profile_info">
+      <img src="{{ tutor.profile_pic.url }}" id="profile"/>
+    </div>
+    <br>
+    <div class="profile_info">
+      <ul>
+        <br>
+        <p><b>TUTOR DETAILS</b></p><br>
+        <p><b>{{tutor.user.first_name|capfirst}} {{tutor.user.last_name|capfirst}}<b></p>
+        <p><b>Instrument:</b> {{ tutor.instrument}}</p>
+        <p><b>Email:</b> {{ tutor.user.email}}</p>
+        <p><b>Instrument:</b> {{ user.student.instrument|capfirst }}</p>
+      </ul>
+
+{% endblock %}

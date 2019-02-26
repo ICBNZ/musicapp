@@ -1,4 +1,4 @@
-/* Order of contents:
+/* contents:
 
 - Fontface
 - Body
@@ -378,7 +378,7 @@ input #loginbtn{
 .content3{
   padding-bottom: 5%;
   color: rgba(26, 57, 88, 0.8);
-  background-color:rgba(255, 255, 255, 0.9);
+  background-color:rgba(255, 255, 255, 0.8);
   width:100%;
 }
 
