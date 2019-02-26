@@ -6,6 +6,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required, user_passes_test
 from home.forms import SignUpForm
 from .models import Tutor, Instrument, Student   # import all models
+from django.db.models import Q # import for searching
 
 # functions to get objects, classname.objects - send to url, args
 #url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
@@ -13,9 +14,22 @@ from .models import Tutor, Instrument, Student   # import all models
 #### Home - passing in tutor/students
 @login_required(login_url="/accounts/login/")
 def home(request):
-    tutors = Tutor.objects
-    students = Student.objects
-    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
+    tutor_search = ''
+    student_search = ''
+    tutors = Tutor.objects.all()
+    students = Student.objects.all()
+
+    # search bar
+    if 'student_search' in request.GET:
+        student_search = request.GET['student_search']
+        tutors = tutors.filter(Q(instruments__icontains=student_search))
+    elif 'tutor_search' in request.GET:
+            student_search = request.GET['student_search']
+            students = students.filter(Q(instruments__icontains=student_search))
+
+    return render(request, 'home.html', {'tutors': tutors,'students': students,'student_search': student_search})
+
+
 
 #### sign up form
 def signup(request):

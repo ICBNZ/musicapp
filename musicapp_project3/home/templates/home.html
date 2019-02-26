@@ -3,13 +3,51 @@
 
 {% block content %}
 
-
-
-
 {# loop through all tutors #}
 <section class="content2">{# blue #}
     {% if user.student %}
     <p id="search"> Search for tutors...</p><br>
+    {# Search  #}
+    <div class="btn-group">
+        <form class="search">
+          {% csrf_token %}
+          <input type="search" placeholder="type your search..." name="student_search">
+          <button class="button1" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="flexbox">
+    {% for tutors in tutors.all %}
+     <section class="boxes">
+        <span id="box">
+
+          <div class="boxcontainer">
+            <a href="{% url 'tutor' user.id %}" alt="Profile">
+            <img src="{{ tutors.profile_pic.url }}"></a>
+            <p>{{ tutors.name|capfirst }}</p>
+              <p>{{ tutors.instrument|capfirst }}</p>
+          </div>
+        </span>
+      </section>
+      {% endfor %}
+    </div>
+     {% endif %}
+</section>
+
+
+{# loop through all tutors #}
+<section class="content2">{# blue #}
+    {% if user.tutor %}
+    <p id="search"> Search for students...</p><br>
+    {# Search  #}
+    <div class="btn-group">
+        <form class="search">
+          {% csrf_token %}
+          <input type="search" placeholder="type your search..." name="tutor_search">
+          <button class="button1" type="submit">Search</button>
+      </form>
+    </div>
+
     <div class="flexbox">
     {% for tutors in tutors.all %}
      <section class="boxes">
