@@ -1,5 +1,5 @@
 from django.urls import path
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls import url
 from . import views
 
@@ -10,6 +10,10 @@ urlpatterns = [
     path('tutor/<id>', views.TutorView.as_view(), name='tutor'),
     path('profile/<id>', views.profile, name='profile'),
     path('about', views.AboutView.as_view(), name='about'),
+
+    path('schedule/', views.schedule, name = 'schedule'),
+    re_path(r'^schedule/(?P<instrument_type>[\w-]+)/$', views.detail, name = 'detail'),
+
 
 
 ]

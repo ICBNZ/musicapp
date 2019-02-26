@@ -39,3 +39,38 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
+
+
+## Booking System
+
+class Hour(models.Model):
+    hour = models.CharField(max_length=8)
+    day_of_week = models.CharField(max_length=9)
+
+    def __str__(self):
+        return self.hour + ' - ' + self.day_of_week
+
+class Availablity(models.Model):
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
+    hour = models.ForeignKey(Hour, on_delete=models.CASCADE)
+    available = models.BooleanField(default=False)
+
+    def __str__(self):
+        if self.available:
+            return self.tutor.name + ' on ' + self.hour.hour + ' ' \
+                + self.hour.day_of_week + ' is available.'
+        else:
+            return self.tutor.name + ' on ' + self.hour.hour + ' ' + \
+                self.hour.day_of_week + ' is booked'
+
+
+
+
+class Booking(models.Model):
+    availablity = models.ForeignKey(Availablity, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.student.name + ' booked ' + self.availablity.tutor.name + \
+            ' on ' + self.availablity.hour.hour + ' ' + \
+            self.availablity.hour.day_of_week

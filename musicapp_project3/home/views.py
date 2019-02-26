@@ -5,7 +5,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required, user_passes_test
 from home.forms import StudentSignUpForm, TutorSignUpForm
-from .models import Tutor, Instrument, Student   # import all models
+from .models import Tutor, Instrument, Student, Hour, Availablity, Booking   # import all models
 from django.db.models import Q # import for searching
 
 # functions to get objects, classname.objects - send to url, args
@@ -86,8 +86,25 @@ def profile(request, id):
     user = User.objects.get(id=id)
     return render(request, 'home/profile.html', {'user': user})
 
+### Booking
+def schedule(request):
+    all_instruments = Instrument.objects.all()
+    tutors = Tutor.objects.all()
+    all_hours = Hour.objects.all()
+    return render(request, 'schedule.html', {'all_instruments': all_instruments, \
+        'tutors': tutors, 'all_hours': all_hours})
 
-######## Class views
+
+
+def detail(request, instrument_type):
+    all_instruments = Instrument.objects.all()
+    all_tutors = Tutor.objects.all()
+    all_availablitys = Availablity.objects.all()
+    return render(request, 'instrument_timetable.html', \
+        {'all_instruments': all_instruments, 'all_availablitys': all_availablitys, \
+        'instrument_type': instrument_type, 'all_tutors': all_tutors,})
+
+
 from django.views import generic
 from django.views.generic import DetailView, TemplateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
