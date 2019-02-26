@@ -1,0 +1,58 @@
+﻿{% load static %}
+<html lang="en-US">
+     <!-- HEAD -->
+     <head>
+        <meta charset="UTF-8">
+        <title>Instrumentor</title>
+        {% load static %}
+        <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
+     </head>
+  <header>
+<!--Mobile Nav -->
+{% if user.is_authenticated %}
+<div class="containernav">
+
+<div class="navbutton">
+     <div class="dropdown">
+         <div class="dropbtn"><img src="{% static 'images/navicon2.png' %}" alt="Nav">
+           <div class="dropdown-content">
+              <a href="{% url 'profile' user.id %}">Account</a>
+              <a href="{% url 'home' %}">Home</a>
+              <a href="{% url 'home' %}">View All Tutors</a>
+              <a href="{% url 'about' %}">About</a>
+			  <a href="..\..\home/schedule/">Schedule</a>
+              <div class="logout">
+              <a href="{% url 'logout' %}">Logout</a>{% csrf_token %}<div>
+          </div>
+         </div>
+     </div>
+   </div>
+ </div>
+{% endif %}
+
+
+    <!-- BODY -->
+    <body id="background_2">
+      {% if user.is_authenticated %}
+        <header>
+              <!-- MAIN TITLE -->
+              <h1 id="home">Welcome {{user.username}}</h1>
+        </header>
+        {% endif %}
+       <!-- MOVE ABOVE TO NAV -->
+<br>
+        <div id ="maincontent">
+          {% block content %}
+          {% endblock %}
+
+        </div>
+
+          <!--FOOTER -->
+          <footer>
+          <p>&copy; Instrumentor 2019</p>
+          </footer>
+
+          <!-- Javascript  -->
+          <script src="{% static 'javascript.js' %}"></script>
+    </body>
+</html>

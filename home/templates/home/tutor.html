@@ -1,0 +1,13 @@
+{# TUTOR PROFILE #}
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+  <h1>{{tutor.first_name|capfirst}} {{tutor.last_name|capfirst}} </h1>
+  <br><br>
+  <p><b>Instrument:</b> {{ tutor.instrument}} </p>
+  <p><b>Email:</b> {{ tutor.instrument}} </p>
+</div>
+<br>
+
+{% endblock %}
