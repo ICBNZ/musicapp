@@ -2,11 +2,15 @@
 
 {% block content %}
 
+
   {# ADD constraints depending on who has logged in #}
 
+<section class="content3">{# white bk #}
+<div class="profile_info">
+<h3> Schedule of Tutors </h3>
 
-<h1> Schedule of Tutors </h1>
-  {# loop availablitys by instrament, tutor, date #}
+
+  {# loop availablities by instrument, tutor, date #}
 
 
 <h3>Instruments</h3>
@@ -33,6 +37,7 @@
 	<span><a href="Saturday">Saturday</a></span>
 	<span><a href="Sunday">Sunday</a></span>
 </ul>
-
+</div>
+</section>
 
 {% endblock %}
