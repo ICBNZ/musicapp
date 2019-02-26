@@ -12,11 +12,9 @@
     <body id="background_1">
       <header>
             <!-- MAIN TITLE -->
-            <div class="mainp">
             <h1 id="home">Instrumentor</h1>
             <br>
-            <i><p>When i  comes to instruments,<br>  mentorship is instrumental</p></i>
-          </div>
+            <i><p style="text-align: center;">When it comes to instruments,<br>  mentorship is instrumental</p></i>
       </header>
 
       <div id ="maincontent">
@@ -35,32 +33,32 @@
         <!--  LOGIN / SIGN UP BUTTONS  -->
         <div class="btn-group">
           <button class="button1">Login</button>
-          <button class="button1">Sign Up</button>
+          <a href="../signup"><button class="button1">Sign Up</button></a>
         </div>
-        <br>
 
       <!-- MODAL 1 - LOGIN -->
       <section id="modal" class="containerm">
           <!-- Close Modal button -->
-          <span id="close" class="close">&times;</span>
+
 
         <!-- Modal 1 login form -->
-        <form class="login" method="post" action="{% url 'login' %}">
-          {% csrf_token %}
-          <table>
-          <tr>
-          <td>{{ form.username.label_tag }}</td>
-          <td>{{ form.username }}</td>
-          </tr>
-          <tr>
-          <td>{{ form.password.label_tag }}</td>
-          <td>{{ form.password }}</td>
-          </tr>
-          </table>
-          <button id="button1" type="submit" value="login">Login</button>
-          <input type="hidden" name="next" value="{{ next }}" />
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        <div class="login">
+          <span id="close" class="close">&times;</span>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div>
+              {{ form.username.label_tag }}
+              {{ form.username }}
+            </div>
+            <div>
+              {{ form.password.label_tag }}
+              {{ form.password }}
+            </div>
+            <button id="button1" type="submit" value="login">Login</button>
+            <input type="hidden" name="next" value="{{ next }}" />
+            <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
         </form>
+      </div>
 
       </section>
     {% endblock %}

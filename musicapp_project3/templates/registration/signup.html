@@ -1,0 +1,59 @@
+{% load static %}
+<html lang="en-US">
+<!-- HEAD -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Instrumentor</title>
+    {% load static %}
+    <link rel="stylesheet" id="style" href="{% static 'style.css' %}" type="text/css" media="all">
+  </head>
+     <!-- BODY -->
+
+	<body id="background_1">
+    	<header style="min-height:150px;max-height:300px">
+        	<!-- MAIN TITLE -->
+        	<h1 id="home">Instrumentor</h1>
+        	<br>
+        	<i><p style="text-align: center">When it comes to instruments,<br>  mentorship is instrumental</p></i>
+    	</header>
+
+    	<div id ="maincontent">
+			<div class="signup">
+				<h2>Sign up</h2>
+  				<form method="post">
+    				{% csrf_token %}
+
+					<p>
+    			  		{{ form.email.label_tag }}
+  						{{ form.email}}
+  						{{ form.email.errors }}
+  					</p>
+    				<p>
+    			  		{{ form.username.label_tag }}
+  						{{ form.username}}
+  						{{ form.username.errors }}
+  					</p>
+  					<p>
+  						{{ form.password1.label_tag }}
+  						{{ form.password1}}
+  						{{ form.password1.errors }}
+  					</p>
+  					<p>
+  						{{ form.password2.label_tag }}
+  						{{ form.password2}}
+  						{{ form.password2.errors }}
+  					</p>
+    			<button id="button1" type="submit">Sign up</button>
+  				</form>
+			</div>
+    	</div>
+
+    	<br>
+    	<br>
+
+      	<!--FOOTER -->
+      	<footer>
+      		<p>&copy; Instrumentor 2019</p>
+      	</footer>
+    </body>
+</html>

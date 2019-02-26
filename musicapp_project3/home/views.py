@@ -1,11 +1,11 @@
 # View.py
-from django.shortcuts import render
-from django.shortcuts import redirect
-from .models import Tutor, Instrument, Student   # import all models
+from django.http import HttpResponse, Http404
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, Group
-from django.http import HttpResponse
-from django.http import Http404
 from django.contrib.auth.decorators import login_required, user_passes_test
+from home.forms import SignUpForm
+from .models import Tutor, Instrument, Student   # import all models
 
 # functions to get objects, classname.objects - send to url, args
 #url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
