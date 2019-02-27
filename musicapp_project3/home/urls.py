@@ -12,10 +12,15 @@ urlpatterns = [
     path('tutors', views.TutorListView.as_view(), name='tutors'),
     path('tutor/<pk>', views.TutorDetailView.as_view(), name='tutor_detail'),
 
-    path('students', views.TutorListView.as_view(), name='students'),
-    path('student/<pk>', views.TutorDetailView.as_view(), name='student_detail'),
+    path('students', views.StudentListView.as_view(), name='students'),
+    path('student/<pk>', views.StudentDetailView.as_view(), name='student_detail'),
 
     path('profile/<id>', views.profile, name='profile'),
+
+    path('profile/edit/redirect/', views.ProfileEditRedirect, name='profile_edit_redirect'),
+    path('profile/edit/student/', views.StudentUpdate.as_view(), name='student_edit'),
+    path('profile/edit/tutor/', views.profile, name='tutor_edit'),
+
     path('about', views.AboutView.as_view(), name='about'),
 
     path('schedule/', views.schedule, name = 'schedule'),

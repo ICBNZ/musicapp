@@ -15,17 +15,14 @@
         <p><b>Username:</b> {{ user.username|capfirst }}</p>
         <p><b>Name:</b> {{ user.student.name|capfirst }}</p>
         <p><b>Email:</b> {{ user.email}} </p>
+        <p><b>About:</b> {{ user.student.about}} </p>
         <p><b>Instrument:</b> {{ user.student.instrument|capfirst }}</p>
-        <br><p><b>Edit Details</b></p>
+        <p><b>Instrument Needed:</b> {{ user.student.instrument_req|capfirst }}</p>
+        <br>
+        {% if request.user == user%}
+          <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
+        {% endif %}
       </ul>
-
-    <br><br>
-          <form method="post" action="">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <br>
-            <button type="submit" value="Save">Submit</button>
-          </form>
  </div>
     <br>
 
@@ -40,19 +37,15 @@
         <p><b>Username:</b> {{ user.username|capfirst }}</p>
         <p><b>Name:</b> {{ user.tutor.name|capfirst }}</p>
         <p><b>Email:</b> {{ user.email}} </p>
+        <p><b>Experience:</b> {{ user.tutor.experience}} </p>
         <p><b>Instrument:</b> {{ user.tutor.instrument|capfirst }}</p>
         <p><b>Instrument Available:</b> {{ user.tutor.instrument_avail|capfirst }}</p>
-        <p><b>Instrument:</b> {{ user.tutor.instrument|capfirst }}</p>
         <p><b>Price:</b> {{ user.tutor.price|capfirst }}</p>
-        <br><p><b>Edit Details</b></p>
+        <br>
+        {% if request.session.user == user%}
+          <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
+        {% endif %}
       </ul>
-        <br><br>
-          <form method="post" action="">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <br>
-            <button type="submit" value="Save">Submit</button>
-          </form>
     </div>
     <br>
 

@@ -16,7 +16,7 @@
      <div class="dropdown">
          <div class="dropbtn"><img src="{% static 'images/navicon2.png' %}" alt="Nav">
            <div class="dropdown-content">
-              <a href="{% url 'profile' user.id %}">Account</a>
+              <a href="{% url 'profile' request.user.id %}">Account</a>
               <a href="{% url 'home' %}">Home</a>
               <a href="{% url 'about' %}">About</a>
               <a href="{% url 'tutors' %}">All Tutors</a>
@@ -34,10 +34,10 @@
 
     <!-- BODY -->
     <body id="background_2">
-      {% if user.is_authenticated %}
+      {% if request.user.is_authenticated %}
         <header>
               <!-- MAIN TITLE -->
-              <h1 id="home">Welcome {{user.username}}</h1>
+              <h1 id="home">Welcome {{ request.user.username }}</h1>
         </header>
         {% endif %}
        <!-- MOVE ABOVE TO NAV -->

@@ -1,0 +1,21 @@
+{% include "base.html" %}
+{% load static  %}
+{# student profile edit #}
+{% block profile %}
+<section class="content3">{# blue #}
+    <br><br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div style="margin-left: 30px; padding-left: 10px;" class="profile_info">
+            {% for field in form %}
+                <div style="margin: 0" class="field-div">
+                    <b>{{ field.label_tag }}</b>
+                    <br>
+                    {{ field}}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <button id="button1" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

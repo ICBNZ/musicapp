@@ -1,5 +1,5 @@
 # View.py
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseForbidden, Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, Group
@@ -8,20 +8,17 @@ from home.forms import StudentSignUpForm, TutorSignUpForm
 from .models import Tutor, Instrument, Student, Hour, Availablity, Booking   # import all models
 from django.db.models import Q # import for searching
 from django.shortcuts import render, get_object_or_404
-
 # functions to get objects, classname.objects - send to url, args
-# url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+#url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
 
-## HOME
+#### Home - passing in tutor/students
 @login_required(login_url="/accounts/login/")
 def home(request):
-    tutors = Tutor.objects.all()
-    students = Student.objects.all()
-    return render(request, 'home.html', {'tutors': tutors,'students': students,})
+    tutors = Tutor.objects
+    students = Student.objects
+    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
 
-
-## FORMS
-# sign up form
+#### sign up form
 def StudentSignup(request):
     if request.method == 'POST':
         form = StudentSignUpForm(request.POST, request.FILES)
@@ -45,7 +42,7 @@ def StudentSignup(request):
         form = StudentSignUpForm()
     return render(request, 'registration/studentsignup.html', {'form': form})
 
-# tutor sign up form
+#### tutor sign up form
 def TutorSignup(request):
     if request.method == 'POST':
         form = TutorSignUpForm(request.POST, request.FILES)
@@ -70,12 +67,19 @@ def TutorSignup(request):
         form = TutorSignUpForm()
     return render(request, 'registration/tutorsignup.html', {'form': form})
 
-## PROFILE
-# Logged In User Profile
+#### Logged In User Profile
 @login_required(login_url="/accounts/login/")
 def profile(request, id):
     user = User.objects.get(id=id)
     return render(request, 'home/profile.html', {'user': user})
+
+### redirects to the right profile editor
+@login_required(login_url="/accounts/login/")
+def ProfileEditRedirect(request):
+    if request.user.student:
+        return redirect('/home/profile/edit/student/')
+    if request.user.tutor:
+        return redirect('tutor/')
 
 
 ## BOOKING
@@ -125,13 +129,43 @@ def search(request):
     return render(request, 'home/search.html', {'tutors': tutors,'students': students,'student_search': student_search})
 '''
 
-# GENERIC VIEWS
+######## Class views
 from django.views import generic
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import DetailView, TemplateView, ListView
+from django.views.generic.edit import UpdateView
 #from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class AboutView(generic.TemplateView):
-    template_name = 'about.html';
+    template_name = 'about.html'
+
+class StudentUpdate(UpdateView):
+    model = Student
+    fields = ['profile_pic', 'name', 'about', 'instrument', 'instrument_req']
+
+    def get_form(self, form_class=None):
+        if form_class is None:
+            form_class = self.get_form_class()
+        form = super(StudentUpdate, self).get_form(form_class)
+        form.fields['instrument_req'].label = 'Instrument Required'
+        return form
+
+    def get_object(self):
+        return get_object_or_404(Student, pk=Student(user=self.request.user))
+
+class TutorUpdate(UpdateView):
+    model = Tutor
+    fields = ['profile_pic', 'name', 'experience', 'instrument', 'instrument_avail']
+
+    def get_form(self, form_class=None):
+        if form_class is None:
+            form_class = self.get_form_class()
+        form = super(TutorUpdate, self).get_form(form_class)
+        form.fields['instrument_avail'].label = 'Instrument Available'
+        return form
+
+    def get_object(self):
+        return get_object_or_404(Tutor, pk=Tutor(user=self.request.user))       
 
 class TutorListView(generic.ListView):
     model = Tutor

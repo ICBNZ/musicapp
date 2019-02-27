@@ -1,6 +1,7 @@
 # models.py
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Instrument(models.Model):
@@ -23,6 +24,9 @@ class Tutor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
     instruments = models.CharField(max_length=150, blank=True, null=True)
 
+    def get_absolute_url(self):
+        return reverse('tutor_detail', kwargs={'pk':self.pk})
+
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
 
@@ -36,6 +40,9 @@ class Student(models.Model):
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
     instruments = models.CharField(max_length=150, blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse('student_detail', kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
