@@ -47,31 +47,7 @@ def StudentSignup(request):
     return render(request, 'registration/studentsignup.html', {'form': form})
 
 
-def BookingPage(request, booking_id):
-    all_students = Student.objects.all()
-    all_availablitys = Availablity.objects.all()
-    for availablity in all_availablitys:
-        availablity.pk = int(availablity.pk)
-    passingBooking_id = booking_id
-    booking_idx = int(passingBooking_id)
-    if request.method == 'POST':
-        form = BookingForm(request.POST, request.FILES)
-        if form.is_valid():
-            for availablity in all_availablitys:
-                if availablity.pk == booking_idx:
-                    avail_page = availablity
-            for student in all_students:
-                if student.user == request.user:
-                    stud_booking = student
-                else:
-                    return render(request, 'not-student.html')
-            new_booking = Booking.objects.create(availablity=avail_page, student=stud_booking) 
-            new_booking.save()
-            return HttpResponse('/booking-confirmed/')
-    else:
-        form = BookingForm()
-    return render(request, 'booking_form.html', {'form': form, 'booking_id': booking_idx, \
-        'all_availablitys': all_availablitys,})
+
 
 
 # tutor sign up form
@@ -123,6 +99,33 @@ def detail(request, instrument_type):
         {'all_instruments': all_instruments, 'all_availablitys': all_availablitys, \
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})
 
+def BookingPage(request, booking_id):
+    all_students = Student.objects.all()
+    all_availablitys = Availablity.objects.all()
+    for availablity in all_availablitys:
+        availablity.pk = int(availablity.pk)
+    passingBooking_id = booking_id
+    booking_idx = int(passingBooking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, request.FILES)
+        if form.is_valid():
+            for student in all_students:   ## better comparing system can be added  in latter iterations
+                if student.user == request.user:
+                    stud_booking = student
+            if stud_booking == None:
+                return render(request, 'not-student.html')
+            for availablity in all_availablitys:
+                if availablity.pk == booking_idx:
+                    avail_page = availablity
+            avail_page.available = False
+            avail_page.save()
+            new_booking = Booking.objects.create(availablity=avail_page, student=stud_booking) 
+            new_booking.save()
+            return render(request, 'booking-confirmed.html')
+    else:
+        form = BookingForm()
+    return render(request, 'booking_form.html', {'form': form, 'booking_id': booking_idx, \
+        'all_availablitys': all_availablitys,})
 
 
 # GENERIC VIEWS
