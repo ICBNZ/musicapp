@@ -81,7 +81,6 @@ def ProfileEditRedirect(request):
     if request.user.tutor:
         return redirect('tutor/')
 
-
 ## BOOKING
 def schedule(request):
     all_instruments = Instrument.objects.all()
@@ -109,32 +108,13 @@ def tutor_detail(request, pk):
 def student_detail(request, pk):
     tutor = get_object_or_404(Post, pk=pk)
     return render(request, 'student_detail.html', {'student': student})
-'''
-## Search
-@login_required(login_url="/accounts/login/")
-def search(request):
-    tutor_search = ''
-    student_search = ''
-    tutors = Tutor.objects.all()
-    students = Student.objects.all()
-
-    # search bar
-    if 'student_search' in request.GET:
-        student_search = request.GET['student_search']
-        tutors = tutors.filter(Q(instrument__name__icontains=student_search))
-    elif 'tutor_search' in request.GET:
-        student_search = request.GET['student_search']
-        students = students.filter(Q(instruments__name__icontains=student_search))
-
-    return render(request, 'home/search.html', {'tutors': tutors,'students': students,'student_search': student_search})
-'''
 
 ######## Class views
 from django.views import generic
 from django.views.generic import DetailView, TemplateView, ListView
 from django.views.generic.edit import UpdateView
+import functools
 #from django.contrib.auth.mixins import LoginRequiredMixin
-
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
@@ -165,10 +145,7 @@ class TutorUpdate(UpdateView):
         return form
 
     def get_object(self):
-        return get_object_or_404(Tutor, pk=Tutor(user=self.request.user))       
-
-class TutorListView(generic.ListView):
-    model = Tutor
+        return get_object_or_404(Tutor, pk=Tutor(user=self.request.user))
 
 class StudentListView(generic.ListView):
     model = Student
@@ -178,3 +155,16 @@ class TutorDetailView(generic.DetailView):
 
 class StudentDetailView(generic.DetailView):
     model = Student
+
+class TutorListView(generic.ListView):
+    model = Tutor
+    def get_queryset(self):
+        result = super(TutorListView, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(Q(name__icontains=query) |
+                (Q(experience__icontains=query))
+            )
+        return result

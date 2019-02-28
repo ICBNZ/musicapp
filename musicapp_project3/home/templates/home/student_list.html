@@ -8,13 +8,10 @@
     {% if user.tutor %}
     <p id="search"> Search for students...</p><br>
     {# Search  #}
-    <div class="btn-group">
-        <form class="search">
-          {% csrf_token %}
-          <input type="search" placeholder="type your search..." name="tutor_search">
-          <button class="button1" type="submit">Search</button>
-      </form>
-    </div>
+
+  <form method="GET" action="" id="searchform">
+    <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+</form>
 
 
     <div class="flexbox">
