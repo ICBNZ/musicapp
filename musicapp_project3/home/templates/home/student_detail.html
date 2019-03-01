@@ -1,8 +1,11 @@
 {% include "base.html" %}
 {% load static  %}
+{% block header %}
+  <h1 id="home">Student Details</h1>
+{% endblock %}
 {# Logged In User Profile #}
 {% block profile %}
-<section class="content3">{# blue #}
+<section class="content3">{# white #}
 <br>    <div class="profile_info">
       <img src="{{ student.profile_pic.url }}" id="profile"/>
     </div>
@@ -10,10 +13,10 @@
     <div class="profile_info">
       <ul>
         <br>
-        <p><b>STUDENT DETAILS</b></p><br>
         <p><b>{{student.user.first_name|capfirst}} {{student.user.last_name|capfirst}}<b></p>
         <p><b>Instrument:</b> {{ student.instrument}}</p>
         <p><b>Email:</b> {{ student.user.email}}</p>
       </ul>
+</section>
 
 {% endblock %}

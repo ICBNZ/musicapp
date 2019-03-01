@@ -38,10 +38,9 @@
     <!-- BODY -->
     <body id="background_2">
       {% if request.user.is_authenticated %}
-        <header>
-              <!-- MAIN TITLE -->
-              <h1 id="home">Welcome {{ request.user.username }}</h1>
-        </header>
+      {% block header %}
+        <!-- MAIN TITLE -->
+        {% endblock %}
         {% endif %}
        <!-- MOVE ABOVE TO NAV -->
 <br>

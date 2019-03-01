@@ -1,5 +1,8 @@
 {% include "base.html" %}
 {% load static  %}
+{% block header %}
+  <h1 id="home">Edit Details</h1>
+{% endblock %}
 {# student profile edit #}
 {% block profile %}
 <section class="content3">{# blue #}
@@ -18,4 +21,5 @@
             <button id="button1" type="submit">Submit</button>
         </div>
     </form>
+  </section>
 {% endblock %}
