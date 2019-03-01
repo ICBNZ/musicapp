@@ -109,11 +109,15 @@ def BookingPage(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, request.FILES)
         if form.is_valid():
+            stud_count = len(all_students)
+            count = 0
             for student in all_students:   ## better comparing system can be added  in latter iterations
+                count = count + 1
                 if student.user == request.user:
                     stud_booking = student
-            if stud_booking == None:
-                return render(request, 'not-student.html')
+                    break
+                elif stud_count == count:
+                    return render(request, 'not-student.html')
             for availablity in all_availablitys:
                 if availablity.pk == booking_idx:
                     avail_page = availablity
