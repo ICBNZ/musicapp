@@ -149,6 +149,18 @@ class TutorUpdate(UpdateView):
 
 class StudentListView(generic.ListView):
     model = Student
+    def get_queryset(self):
+        result = super(StudentListView, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(Q(name__icontains=query) |
+                (Q(about__icontains=query) |
+                (Q(instrument__name__icontains=query)))
+            )
+        return result
+
 
 class TutorDetailView(generic.DetailView):
     model = Tutor
@@ -165,6 +177,7 @@ class TutorListView(generic.ListView):
         if query:
             query_list = query.split()
             result = result.filter(Q(name__icontains=query) |
-                (Q(experience__icontains=query))
+                (Q(experience__icontains=query) |
+                (Q(instrument__name__icontains=query)))
             )
         return result

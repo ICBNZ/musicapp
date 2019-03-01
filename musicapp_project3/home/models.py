@@ -22,7 +22,6 @@ class Tutor(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
-    instruments = models.CharField(max_length=150, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse('tutor_detail', kwargs={'pk':self.pk})
@@ -39,8 +38,7 @@ class Student(models.Model):
     instrument_req = models.BooleanField(null=True, blank=True)
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
-    instruments = models.CharField(max_length=150, blank=True, null=True)
-
+    
     def get_absolute_url(self):
         return reverse('student_detail', kwargs={'pk':self.pk})
 

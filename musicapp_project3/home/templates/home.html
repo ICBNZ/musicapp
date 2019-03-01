@@ -5,7 +5,11 @@
 {% block content %}
 <div class="mainp">
           <a href="{% url 'profile' user.id %}"><p>View Profile<p></a>
+            {% if user.student %}
           <a href="{% url 'tutors' %}"><p>View All Tutors<p></a>
+            {% elif user.tutor %}
+            <a href="{% url 'students' %}"><p>View All Students<p></a>
+                {% endif %}
             <br><br>
 </div>
 

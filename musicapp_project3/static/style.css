@@ -211,7 +211,6 @@ header {
  margin:0;
  padding-bottom: 50px;
 }
-
 header h2{
  float: left;
  font-size: 3em;
@@ -298,8 +297,6 @@ header h4{
 .mainp a{
   color: white;
 }
-/*****        LOGO  ******/
-
 
 /******          FORM *****/
 .login{
@@ -333,7 +330,7 @@ label:after {
   content: " ";
 }
 input[type=text], [type=email], [type=password], [type=logout],select {
-    width: 80px;
+    width: 180px;
     height:30px;
     padding: 8px 40px 0 0 ;
     margin: 10px 30px 20px 30px ;
@@ -366,13 +363,12 @@ input #loginbtn{
   float:right;
 }
 .field-div *{
-  margin: 5px 0 !important;
+  margin: 5px !important;
   padding: 0;
   width: 60%;
 }
 .field-div
 input[type=text],
-input[type=password],
 input[type=number],
 input[type=file],
 input[type=email],

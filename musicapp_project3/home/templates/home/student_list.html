@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 {# All #}
-
 {% block content %}
 
-{# loop through all tutors #}
+{# loop through all students #}
 <section class="content2">{# blue #}
-    {% if user.tutor %}
-    <p id="search"> Search for students...</p><br>
-    {# Search  #}
-
-  <form method="GET" action="" id="searchform">
-    <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
-</form>
-
+  {# Search  #}
+  <div class="btn-group">
+        {% csrf_token %}
+    <form id="searchform" action="{% url 'students' %}" method="get" accept-charset="utf-8">
+     <input name="q" type="search" placeholder="Search">
+     <button class="button1" type="submit">Search</button>
+    </form>
+  </div>
 
     <div class="flexbox">
     {% for student in student_list %}
@@ -21,7 +20,7 @@
 
           <div class="boxcontainer">
 
-            <a href="{% url 'student' student.pk %}" alt="Profile">
+            <a href="{% url 'student_detail' student.pk %}" alt="Profile">
             <img src="{{ student.profile_pic.url }}"></a>
 
             <p>{{ student.name|capfirst }}</p>
@@ -31,8 +30,6 @@
       </section>
       {% endfor %}
     </div>
-     {% endif %}
 </section>
-
 
 {% endblock %}

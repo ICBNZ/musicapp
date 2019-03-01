@@ -19,7 +19,7 @@ urlpatterns = [
 
     path('profile/edit/redirect/', views.ProfileEditRedirect, name='profile_edit_redirect'),
     path('profile/edit/student/', views.StudentUpdate.as_view(), name='student_edit'),
-    path('profile/edit/tutor/', views.profile, name='tutor_edit'),
+    path('profile/edit/tutor/', views.TutorUpdate.as_view(), name='tutor_edit'),
 
     path('about', views.AboutView.as_view(), name='about'),
 

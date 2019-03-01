@@ -4,12 +4,14 @@
 
 {# loop through all tutors #}
 <section class="content2">{# blue #}
-  <form id="searchform" action="{% url 'tutors' %}" method="get" accept-charset="utf-8">
-     <button class="searchbutton" type="submit">
-       <i class="fa fa-search"></i>
-     </button>
-     <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
-   </form>
+  {# Search  #}
+  <div class="btn-group">
+        {% csrf_token %}
+    <form id="searchform" action="{% url 'tutors' %}" method="get" accept-charset="utf-8">
+     <input name="q" type="search" placeholder="Search">
+     <button class="button1" type="submit">Search</button>
+    </form>
+  </div>
 
     <div class="flexbox">
     {% for tutor in tutor_list %}
