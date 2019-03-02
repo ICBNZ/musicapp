@@ -57,7 +57,7 @@
         <p><b>Instrument Available:</b>No</p>
         {% endif %}
         <br>
-        {% if request.user == user%}
+        {% if request.user == user %}
           <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
         {% endif %}
       </ul>

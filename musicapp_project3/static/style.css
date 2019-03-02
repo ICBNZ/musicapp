@@ -115,6 +115,12 @@ body h1 {
   text-align: center;
   padding-bottom: 5px;
 }
+.btn-group2{
+  width: 100%;
+  display:inline-block;
+  text-align: center;
+  padding-bottom: 5px;
+}
 .btn-group .button1 {
     background-color: rgba(16, 57, 90, 0.7);
     color: white;
@@ -127,7 +133,7 @@ body h1 {
     font-size: 24px;
     margin: 2px;
 }
-.btn-group .button2 {
+.btn-group2 .button2 {
     background-color: white;
     color: rgba(16, 57, 90, 0.7);
     cursor: pointer;
@@ -136,7 +142,7 @@ body h1 {
     border-radius: 4px;
     border: none;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     margin: 2px;
 }
 #button1 {
@@ -151,19 +157,7 @@ body h1 {
     font-size: 24px;
     margin-top: 5px;
 }
-#button2 {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: rgba(16, 57, 90, 0.7);
-    cursor: pointer;
-    width: 150px;
-    height: 40px;
-    border-radius: 4px;
-    border: none;
-    text-align: center;
-    float: right;
-    font-size: 24px;
-    margin-top: 5px;
-}
+
 .btn-group button:not(:last-child) {
     border-right: none;
 }
@@ -281,9 +275,11 @@ header h4{
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 1;
   top:0;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 .dropdown-content a {
-  padding: 25px 40px 25px 0;
+  padding: 2%;
   display: inline-block;
   text-align: center;
 }
@@ -370,8 +366,8 @@ input #loginbtn{
   height: 40px;
 }
 .logout{
-  margin-top: 0;
-  float:right;
+  display: inline;
+  padding:2%;
 }
 .field-div *{
   margin: 5px !important;
