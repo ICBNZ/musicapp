@@ -12,27 +12,29 @@
 {% if user.is_authenticated %}
 <div class="containernav">
 
-<div class="navbutton">
-     <div class="dropdown">
-         <div class="dropbtn"><img src="{% static 'images/navicon2.png' %}" alt="Nav">
-           <div class="dropdown-content">
-              <a href="{% url 'profile' request.user.id %}">Account</a>
-              <a href="{% url 'home' %}">Home</a>
-              <a href="{% url 'about' %}">About</a>
-              {% if user.student %}
-              <a href="{% url 'tutors' %}">All Tutors</a>
-              {% elif user.tutor %}
-              <a href="{% url 'students' %}">All Students</a>
-              {% endif %}
-			        <a href="..\..\home/schedule/">Schedule</a>
-              <div class="logout">
-              <a href="{% url 'logout' %}">Logout</a>{% csrf_token %}<div>
-          </div>
-         </div>
-     </div>
-   </div>
- </div>
-{% endif %}
+    <div class="navbutton">
+           <div class="dropdown">
+               <div class="dropbtn"><img src="{% static 'images/navicon2.png' %}" alt="Nav">
+                   <div class="dropdown-content">
+                      <a href="{% url 'profile' request.user.id %}">Account</a>
+                      <a href="{% url 'home' %}">Home</a>
+                      <a href="{% url 'about' %}">About</a>
+                      {% if user.student %}
+                      <a href="{% url 'tutors' %}">All Tutors</a>
+                      {% elif user.tutor %}
+                      <a href="{% url 'students' %}">All Students</a>
+                      {% endif %}
+        			        <a href="..\..\home/schedule/">Schedule</a>
+                      <div class="logout">
+                      <a href="{% url 'logout' %}">Logout</a>{% csrf_token %}
+                    </div>
+               </div>
+            </div>
+       </div>
+    </div>
+
+</div>
+      {% endif %}
 
 
     <!-- BODY -->
@@ -42,13 +44,12 @@
         <!-- MAIN TITLE -->
         {% endblock %}
         {% endif %}
-       <!-- MOVE ABOVE TO NAV -->
-<br>
-        <div id ="maincontent">
-          {% block content %}
-          {% endblock %}
+        <br>
+        <div id="maincontent">
+        {% block content %}
+        {% endblock %}
+      </div>
 
-        </div>
 
           <!--FOOTER -->
           <footer>

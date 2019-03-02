@@ -5,32 +5,29 @@
   <h1 id="home">Welcome {{ request.user.username }}</h1>
 {% endblock %}
 {% block content %}
-<div class="mainp">
   <div class="home">
-
-    {% if user.student %}  
+    {% if user.student %}
     <a href="{% url 'profile' user.id %}">
+      <img src="{% static 'images/profileicon.png' %}" id="icon"/>
       <img src="{{ user.student.profile_pic.url }}"/>
     </a>
-
       <a href="{% url 'tutors' %}">
-      <img src="{% static "drums.jpg" %}" alt="tutors" ></a>
-
+          <img src="{% static 'images/searchicon.png' %}" id="icon"/>
+      <img src="{% static 'images/amp.jpg' %}" id="tutors"/></a>
+</div>
     {% elif user.tutor %}
+      <div class="home">
     <a href="{% url 'profile' user.id %}">
+        <img src="{% static 'images/profileicon.png' %}" id="icon"/>
       <img src="{{ user.tutor.profile_pic.url }}"/>
     </a>
 
     <a href="{% url 'students' %}">
-    <img src="{% static "drums.jpg" %}" alt="tutors" ></a>
-
-
-
+        <img src="{% static 'images/searchicon.png' %}" id="icon"/>
+    <img src="{% static 'images/amp.jpg' %}" id="tutors"/></a>
+    </div>
 
     {% endif %}
     <br><br>
-
- </div>
-</div>
 
 {% endblock %}
