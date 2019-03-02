@@ -21,7 +21,12 @@
         <p><b>Email:</b> {{ user.email}} </p>
         <p><b>About:</b> {{ user.student.about}} </p>
         <p><b>Instrument:</b> {{ user.student.instrument|capfirst }}</p>
-        <p><b>Instrument Needed:</b> {{ user.student.instrument_req|capfirst }}</p>
+        {% if user.student.instrument_req == True %}
+        <p><b>Instrument Needed:</b>Yes</p>
+        {% elif user.student.instrument_req == False %}
+        <p><b>Instrument Needed:</b>No</p>
+        {% endif %}
+
         <br>
         {% if request.user == user%}
           <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
@@ -46,8 +51,11 @@
         <p><b>Email:</b> {{ user.email}} </p>
         <p><b>Experience:</b> {{ user.tutor.experience}} </p>
         <p><b>Instrument:</b> {{ user.tutor.instrument|capfirst }}</p>
-        <p><b>Instrument Available:</b> {{ user.tutor.instrument_avail|capfirst }}</p>
-        <p><b>Price:</b> {{ user.tutor.price|capfirst }}</p>
+        {% if user.tutor.instrument_avail == True %}
+        <p><b>Instrument Available:</b>Yes</p>
+        {% elif user.tutor.instrument_avail == False %}
+        <p><b>Instrument Available:</b>No</p>
+        {% endif %}
         <br>
         {% if request.user == user%}
           <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
