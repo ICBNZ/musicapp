@@ -120,7 +120,7 @@ def schedule(request):
 def detail(request, instrument_type):
     all_instruments = Instrument.objects.all()
     all_tutors = Tutor.objects.all()
-    all_avail = Availablity.objects.all()
+    all_avail = Availability.objects.all()
     return render(request, 'instrument_timetable.html', \
         {'all_instruments': all_instruments, 'all_avail': all_avail, \
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})

@@ -1,0 +1,33 @@
+[03/Mar/2019 20:30:34] INFO [home.views:20] User: Casey logged in
+[03/Mar/2019 20:31:22] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
+[03/Mar/2019 20:31:22] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
+[03/Mar/2019 20:31:54] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
+[03/Mar/2019 20:31:54] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
+[03/Mar/2019 20:31:57] ERROR [django.request:228] Internal Server Error: /home/schedule/Sarah/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 123, in detail
+    all_avail = Availablity.objects.all()
+NameError: name 'Availablity' is not defined
+[03/Mar/2019 20:31:57] ERROR [django.server:154] "GET /home/schedule/Sarah/ HTTP/1.1" 500 64271
+[03/Mar/2019 20:32:59] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
+[03/Mar/2019 20:32:59] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
+[03/Mar/2019 20:33:02] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
+[03/Mar/2019 20:33:02] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
+[03/Mar/2019 20:38:50] ERROR [django.request:228] Internal Server Error: /home/schedule/Flute/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 123, in detail
+    all_avail = Availablity.objects.all()
+NameError: name 'Availablity' is not defined
+[03/Mar/2019 20:38:50] ERROR [django.server:154] "GET /home/schedule/Flute/ HTTP/1.1" 500 64271

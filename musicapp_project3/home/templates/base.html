@@ -21,9 +21,9 @@
                       <a href="{% url 'about' %}">About</a>
                       {% if user.student %}
                       <a href="{% url 'tutors' %}">Tutors</a>
-                      {% elif user.tutor %}
-                      <a href="{% url 'students' %}">Students</a>    
 			                <a href="..\..\home/schedule/">Schedule</a>
+                      {% elif user.tutor %}
+                      <a href="{% url 'students' %}">Students</a>
                       {% endif %}
                       <a href="{% url 'logout' %}"><div class="logout">Logout
                     </div>{% csrf_token %}</a>

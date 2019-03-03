@@ -10,22 +10,22 @@
 <section class="content3">{# white bk #}
 <div class="profile_info">
 	<ul>
-		{% for availablity in all_availablitys %}
-		{% if availablity.tutor.instrument.name == instrument_type %}
+		{% for availability in all_avail %}
+		{% if availability.tutor.instrument.name == instrument_type %}
 		<br>
-		<li><a href="..\..\booking/{{availablity.pk}}"> {{availablity}} </a></li>
+		<li><a href="..\..\booking/{{availability.pk}}"> {{availability}} </a></li>
 		{% endif %}
 		{% endfor %}
-		{% for availablity in all_availablitys %}
-		{% if availablity.tutor.user.username == instrument_type %}
+		{% for availability in all_avail %}
+		{% if availability.tutor.user.username == instrument_type %}
 		<br>
-		<li><a href="..\..\booking/{{availablity.pk}}">{{availablity}} </a></li>
+		<li><a href="..\..\booking/{{availablity.pk}}">{{availability}} </a></li>
 		{% endif %}
 		{% endfor %}
-		{% for availablity in all_availablitys %}
-		{% if availablity.hour.day_of_week == instrument_type %}
+		{% for availability in all_availablitys %}
+		{% if availability.hour.day_of_week == instrument_type %}
 		<br>
-		<li><a href="..\..\booking/{{availablity.pk}}">{{availablity}} </a></li>
+		<li><a href="..\..\booking/{{availability.pk}}">{{availability}} </a></li>
 		{% endif %}
 		{% endfor %}
 	</ul>
