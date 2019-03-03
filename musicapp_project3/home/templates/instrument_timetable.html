@@ -1,9 +1,7 @@
 ﻿{% extends "base.html" %}
-
 {% block content %}
 
   {# ADD constraints depending on who has logged in #}
-
 
 <h1> {{instrument_type}} lessons available</h1>
 
@@ -15,6 +13,8 @@
     {% if availability.available == True %}
 		<br>
 		<li><a href="..\..\booking/{{availability.pk}}"> {{availability}} </a></li>
+    {% else %}
+    <p> sorry no bookings </p>
     {% endif %}
     {% endif %}
 		{% endfor %}
@@ -38,5 +38,8 @@
 		{% endfor %}
 	</ul>
 </div>
+<br><br>
 </section>
+
+
 {% endblock %}

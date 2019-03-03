@@ -189,7 +189,7 @@ import functools
 #from django.contrib.auth.mixins import LoginRequiredMixin
 
 class BookedView(generic.TemplateView):
-    template_name = 'booking-confirmed.html';
+    template_name = 'booking_confirmed.html';
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
