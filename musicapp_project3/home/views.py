@@ -8,26 +8,24 @@ from home.forms import StudentSignUpForm, TutorSignUpForm, BookingForm
 from .models import Tutor, Instrument, Student, Availability, Hour, Booking   # import all models
 from django.db.models import Q # import for searching
 from django.shortcuts import render, get_object_or_404
-import logging
+import logging  # logging
 log = logging.getLogger(__name__)
 from django.contrib.auth.signals import user_logged_in, user_login_failed
 from django.dispatch import receiver
+from django.contrib.auth.decorators import permission_required ## permissions
+from django.contrib.auth.models import Group, Permission
 
-# User Logged In
-@receiver(user_logged_in)
+#logging
+@receiver(user_logged_in)    # User Logged In
 def user_logged_in_callback(sender, request, user, **kwargs):
 	log.info('User: {user} logged in'.format(
     user=request.user.username))
 
-# Login Failed
-@receiver(user_login_failed)
+@receiver(user_login_failed)     # Login Failed
 def user_login_failed_callback(sender, credentials, **kwargs):
     log.warning('login failed for: {credentials}'.format(
         credentials=credentials['username'],
     ))
-## users auth
-# functions to get objects, classname.objects - send to url, args
-#url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
 
 #### Home - passing in tutor/students
 @login_required(login_url="/accounts/login/")
@@ -107,8 +105,7 @@ def ProfileEditRedirect(request):
     if request.user.tutor:
         return redirect('tutor/')
 
-## BOOKING
-#schedule
+## booking
 def schedule(request):
     all_instruments = Instrument.objects.all()
     tutors = Tutor.objects.all()
@@ -146,7 +143,6 @@ def booking_page(request, pk):
     return render(request, 'booking_form.html', {'form': form, \
         'avail': avail})
 
-# Book
 def book(request, pk):
     tutor = get_object_or_404(Tutor, pk=pk)
     tutors = Tutor.objects.all()
@@ -159,7 +155,6 @@ def book(request, pk):
 # Confirmation
 def booking_confirmed(request, booking_id):
     booking = get_object_or_404(Booking, id=id)
-
     instruments = Instrument.objects.all()
     tutor = Tutor.objects.all()
     avail = Availablity.objects.all()
@@ -186,15 +181,15 @@ from django.views import generic
 from django.views.generic import DetailView, TemplateView, ListView
 from django.views.generic.edit import UpdateView
 import functools
-#from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class BookedView(generic.TemplateView):
+class BookedView(LoginRequiredMixin, generic.TemplateView):
     template_name = 'booking_confirmed.html';
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
 
-class StudentUpdate(UpdateView):
+class StudentUpdate(LoginRequiredMixin, UpdateView):
     model = Student
     fields = ['profile_pic', 'name', 'about', 'instrument', 'instrument_req']
 
@@ -208,7 +203,7 @@ class StudentUpdate(UpdateView):
     def get_object(self):
         return get_object_or_404(Student, pk=Student(user=self.request.user))
 
-class TutorUpdate(UpdateView):
+class TutorUpdate(LoginRequiredMixin, UpdateView):
     model = Tutor
     fields = ['profile_pic', 'name', 'experience', 'instrument', 'instrument_avail']
 
@@ -222,14 +217,13 @@ class TutorUpdate(UpdateView):
     def get_object(self):
         return get_object_or_404(Tutor, pk=Tutor(user=self.request.user))
 
-
-class TutorDetailView(generic.DetailView):
+class TutorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Tutor
 
-class StudentDetailView(generic.DetailView):
+class StudentDetailView(LoginRequiredMixin, generic.DetailView):
     model = Student
 
-class StudentListView(generic.ListView):
+class StudentListView(LoginRequiredMixin, generic.ListView):
     model = Student
     def get_queryset(self):
         result = super(StudentListView, self).get_queryset()
@@ -243,7 +237,7 @@ class StudentListView(generic.ListView):
             )
         return result
 
-class TutorListView(generic.ListView):
+class TutorListView(LoginRequiredMixin, generic.ListView):
     model = Tutor
     def get_queryset(self):
         result = super(TutorListView, self).get_queryset()

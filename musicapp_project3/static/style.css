@@ -59,6 +59,7 @@ body h1 {
 body p{
   font-size: 20px;
   }
+
 #title{
     z-index: -1;}
 #search {
@@ -432,6 +433,9 @@ textarea,select{
   width:100%;
   min-height: 40%;
   overflow: auto;
+}
+.content3 ul{
+  decoration: none;
 }
 .content4{
   margin-top: 20px;
