@@ -7,7 +7,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('home', views.home, name='home'),
-    #path('search', views.search, name='search'),
 
     path('tutors', views.TutorListView.as_view(), name='tutors'),
     path('tutor/<pk>', views.TutorDetailView.as_view(), name='tutor_detail'),
@@ -23,8 +22,8 @@ urlpatterns = [
 
     path('about', views.AboutView.as_view(), name='about'),
 
-    #path('schedule/', views.schedule, name = 'schedule'),
-    #re_path(r'^schedule/(?P<instrument_type>[\w-]+)/$', views.detail, name = 'detail'),
+    path('schedule/', views.schedule, name = 'schedule'),
+    re_path(r'^schedule/(?P<instrument_type>[\w-]+)/$', views.detail, name = 'detail'),
 
 	re_path(r'^booking/(?P<pk>[0-9]+)/$', views.booking_page, name = 'booking'),
     path('booking_confirmed', views.BookedView.as_view(), name='booking_confirmed'),

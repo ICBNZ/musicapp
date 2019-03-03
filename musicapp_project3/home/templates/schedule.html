@@ -1,0 +1,42 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+
+
+  {# ADD constraints depending on who has logged in #}
+
+<section class="content3">{# white bk #}
+<div class="profile_info">
+
+
+  {# loop availablities by instrument, tutor, date #}
+
+
+<h3>Instruments</h3>
+<ul>
+	{% for instrument in all_instruments %}
+	<span><a href="{{instrument.name}}"> {{instrument.name}} </a></span>
+	{% endfor %}
+</ul>
+
+<h3>Tutors</h3>
+<ul>
+	{% for tutor in tutors %}
+	<span><a href="{{tutor.user.username}}">{{tutor.name}}</a></span>
+	{% endfor %}
+</ul>
+
+<h3>Days Of The Week</h3>
+<ul>
+	<span><a href="Monday">Monday</a></span>
+	<span><a href="Tuesday">Tuesday</a></span>
+	<span><a href="Wednesday">Wednesday</a></span>
+	<span><a href="Thursday">Thursday</a></span>
+	<span><a href="Friday">Friday</a></span>
+	<span><a href="Saturday">Saturday</a></span>
+	<span><a href="Sunday">Sunday</a></span>
+</ul>
+</div>
+</section>
+
+{% endblock %}

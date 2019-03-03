@@ -8,7 +8,23 @@ from home.forms import StudentSignUpForm, TutorSignUpForm, BookingForm
 from .models import Tutor, Instrument, Student, Availability, Hour, Booking   # import all models
 from django.db.models import Q # import for searching
 from django.shortcuts import render, get_object_or_404
-## Logging
+import logging
+log = logging.getLogger(__name__)
+from django.contrib.auth.signals import user_logged_in, user_login_failed
+from django.dispatch import receiver
+
+# User Logged In
+@receiver(user_logged_in)
+def user_logged_in_callback(sender, request, user, **kwargs):
+	log.info('User: {user} logged in'.format(
+    user=request.user.username))
+
+# Login Failed
+@receiver(user_login_failed)
+def user_login_failed_callback(sender, credentials, **kwargs):
+    log.warning('login failed for: {credentials}'.format(
+        credentials=credentials['username'],
+    ))
 ## users auth
 # functions to get objects, classname.objects - send to url, args
 #url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
