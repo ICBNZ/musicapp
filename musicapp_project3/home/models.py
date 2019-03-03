@@ -30,7 +30,7 @@ class Student(models.Model):
     instrument_req = models.BooleanField(null=True, blank=True)
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
-    
+
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
 
@@ -70,6 +70,6 @@ class Booking(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.student.name + ' booked ' + self.availability.tutor.name + \
+        return ' Booked for ' + self.availability.tutor.name + \
             ' on ' + self.availability.hour.hour + ' ' + \
             self.availability.hour.day_of_week

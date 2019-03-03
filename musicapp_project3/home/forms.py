@@ -69,11 +69,4 @@ class TutorSignUpForm(UserCreationForm):
         return user
 
 class BookingForm(forms.Form):
-    availability = forms.BooleanField(label='I want to book this lesson.')
-
-'''
-class BookingForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = ('availability','student')
-'''
+    availability = forms.BooleanField(label='Book this lesson.')

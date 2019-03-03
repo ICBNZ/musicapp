@@ -8,6 +8,8 @@ from home.forms import StudentSignUpForm, TutorSignUpForm, BookingForm
 from .models import Tutor, Instrument, Student, Availability, Hour, Booking   # import all models
 from django.db.models import Q # import for searching
 from django.shortcuts import render, get_object_or_404
+## Logging
+## users auth
 # functions to get objects, classname.objects - send to url, args
 #url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
 
@@ -71,7 +73,15 @@ def TutorSignup(request):
 @login_required(login_url="/accounts/login/")
 def profile(request, id):
     user = User.objects.get(id=id)
-    return render(request, 'home/profile.html', {'user': user})
+    try:
+        bookings = Booking.objects.all()
+        userBookings= []
+        for book in bookings:
+            if(book.student == user.student):
+               userBookings.append(book)
+    except User.DoesNotExist:
+        raise Http404('User not found')
+    return render(request, 'home/profile.html', {'user': user, 'userBookings': userBookings, 'bookings': bookings})
 
 ### redirects to the right profile editor
 @login_required(login_url="/accounts/login/")
@@ -196,6 +206,13 @@ class TutorUpdate(UpdateView):
     def get_object(self):
         return get_object_or_404(Tutor, pk=Tutor(user=self.request.user))
 
+
+class TutorDetailView(generic.DetailView):
+    model = Tutor
+
+class StudentDetailView(generic.DetailView):
+    model = Student
+
 class StudentListView(generic.ListView):
     model = Student
     def get_queryset(self):
@@ -209,13 +226,6 @@ class StudentListView(generic.ListView):
                 (Q(instrument__name__icontains=query)))
             )
         return result
-
-
-class TutorDetailView(generic.DetailView):
-    model = Tutor
-
-class StudentDetailView(generic.DetailView):
-    model = Student
 
 class TutorListView(generic.ListView):
     model = Tutor

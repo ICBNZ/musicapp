@@ -27,14 +27,21 @@
         <p><b>Instrument Needed:</b>No</p>
 
         <br><p><b>Bookings</b></p>
-        <p>{{ user.student.booking.tutor|capfirst }}</p>
+
+        {% for booking in userBookings %}
+        <p>{{ booking }}</p>
+        {% endfor %}
 
         {% endif %}
-
         <br>
         {% if request.user == user%}
-          <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
+          <div class="btn-group2">
+            <button class="button2">
+              <a href="{% url 'profile_edit_redirect' %}">Edit Details</a>
+            </button>
+          </div>
         {% endif %}
+
       </ul>
     </div>
     <br>
@@ -62,7 +69,11 @@
         {% endif %}
         <br>
         {% if request.user == user %}
-          <p><a href="{% url 'profile_edit_redirect' %}"><button class="button1">Edit Details</button></a></p>
+          <div class="btn-group2">
+            <button class="button2">
+              <a href="{% url 'profile_edit_redirect' %}">Edit Details</a>
+            </button>
+          </div>
         {% endif %}
       </ul>
     </div>

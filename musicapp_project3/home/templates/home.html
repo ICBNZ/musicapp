@@ -1,33 +1,46 @@
 {% extends 'base.html' %}
-{% load static  %}
+{% load static %}
 {# Home Page - check if student or tutor #}
+
 {% block header %}
-  <h1 id="home">Welcome {{ request.user.username }}</h1>
+   <h1 id="home">Welcome {{ request.user.username }}</h1>
 {% endblock %}
+
 {% block content %}
+
+
+  {% if user.student %}
   <div class="home">
-    {% if user.student %}
-    <a href="{% url 'profile' user.id %}">
-      <img src="{% static 'images/profileicon.png' %}" id="icon"/>
-      <img src="{{ user.student.profile_pic.url }}"/>
-    </a>
+     <a href="{% url 'profile' user.id %}">
+
+        <div class="home_white">
+          <img src="{% static 'images/profileicon.png' %}" id="icon"/>
+          <h5 id="iconbk"> ACCOUNT </h5>
+          <img src="{{ user.student.profile_pic.url }}"id="home_pic"/>
+        </div>
+      </a>
+
       <a href="{% url 'tutors' %}">
-          <img src="{% static 'images/searchicon.png' %}" id="icon"/>
-      <img src="{% static 'images/amp.jpg' %}" id="tutors"/></a>
-</div>
-    {% elif user.tutor %}
-      <div class="home">
-    <a href="{% url 'profile' user.id %}">
-        <img src="{% static 'images/profileicon.png' %}" id="icon"/>
-      <img src="{{ user.tutor.profile_pic.url }}"/>
-    </a>
-
-    <a href="{% url 'students' %}">
+        <div class="home_white">
         <img src="{% static 'images/searchicon.png' %}" id="icon"/>
-    <img src="{% static 'images/amp.jpg' %}" id="tutors"/></a>
-    </div>
+          <h5 id="iconbk"> TUTORS </h5>
+        <img src="{% static 'images/amp.jpg' %}" id="home_pic"/>
+       </div></a>
+  </div>
 
-    {% endif %}
+  {% elif user.tutor %}
+   <div class="home">
+      <a href="{% url 'profile' user.id %}">
+        <img src="{% static 'images/profileicon.png' %}" id="icon"/>
+        <img src="{{ user.tutor.profile_pic.url }}"id="home_pic"/>
+      </a>
+
+      <a href="{% url 'students' %}">
+        <img src="{% static 'images/searchicon.png' %}" id="icon"/>
+        <img src="{% static 'images/amp.jpg' %}" id="home_pic"/></a>
+   </div>
+
+  {% endif %}
     <br><br>
 
 {% endblock %}
