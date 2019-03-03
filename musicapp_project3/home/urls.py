@@ -23,19 +23,10 @@ urlpatterns = [
 
     path('about', views.AboutView.as_view(), name='about'),
 
-    path('schedule/', views.schedule, name = 'schedule'),
-    re_path(r'^schedule/(?P<instrument_type>[\w-]+)/$', views.detail, name = 'detail'),
+    #path('schedule/', views.schedule, name = 'schedule'),
+    #re_path(r'^schedule/(?P<instrument_type>[\w-]+)/$', views.detail, name = 'detail'),
 
-
-
+	re_path(r'^booking/(?P<pk>[0-9]+)/$', views.booking_page, name = 'booking'),
+    path('booking_confirmed', views.BookedView.as_view(), name='booking_confirmed'),
+    path('book/<pk>', views.book, name = 'book'),
 ]
-
-
-
-
-'''
-path('tutor/<id>', views.TutorSearchView.as_view(), name='tutors'),
-path('tutors', views.tutor, name='tutors'),
-path('students', views.student, name='students'),
-path('student/<id>', views.StudentSearchView.as_view(), name='student'),
-'''

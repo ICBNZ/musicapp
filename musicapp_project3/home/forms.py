@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from home.models import Instrument, Student, Tutor
+from home.models import Instrument, Student, Tutor, Booking
 
 
 class StudentSignUpForm(UserCreationForm):
@@ -67,3 +67,13 @@ class TutorSignUpForm(UserCreationForm):
     def save(self):
         user = super().save()
         return user
+
+class BookingForm(forms.Form):
+    availability = forms.BooleanField(label='I want to book this lesson.')
+
+'''
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ('availability','student')
+'''

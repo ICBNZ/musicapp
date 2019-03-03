@@ -1,16 +1,21 @@
 {% include "base.html" %}
 {% load static  %}
+
 {% block header %}
   <h1 id="home">Tutor Details</h1>
 {% endblock %}
+
 {# Logged In User Profile #}
 {% block profile %}
+
 <section class="content3">{# white #}
-<br>    <div class="profile_info">
+  <br>
+  <div class="profile_info">
       <img src="{{ tutor.profile_pic.url }}" id="profile"/>
-    </div>
-    <br>
+  </div>
+  <br>
     <div class="profile_info">
+
       <ul>
         <br>
         <p><b>{{tutor.user.first_name|capfirst}} {{tutor.user.last_name|capfirst}}</b></p>
@@ -18,7 +23,15 @@
         <p><b>Instrument:</b> {{ tutor.experience}}</p>
         <p><b>Email:</b> {{ tutor.user.email}}</p>
       </ul>
-      <br><br>
+
+      <div class="btn-group2">
+        <button class="button2">
+          <a href="{% url 'book' tutor.pk %}">Book {{tutor.user.first_name|capfirst}}</a>
+        </button>
+      </div>
+
+      <br>
+      <br>
 </section>
 
 {% endblock %}

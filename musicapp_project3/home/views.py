@@ -4,8 +4,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required, user_passes_test
-from home.forms import StudentSignUpForm, TutorSignUpForm
-from .models import Tutor, Instrument, Student, Hour, Availablity, Booking   # import all models
+from home.forms import StudentSignUpForm, TutorSignUpForm, BookingForm
+from .models import Tutor, Instrument, Student, Availability, Hour, Booking   # import all models
 from django.db.models import Q # import for searching
 from django.shortcuts import render, get_object_or_404
 # functions to get objects, classname.objects - send to url, args
@@ -82,20 +82,66 @@ def ProfileEditRedirect(request):
         return redirect('tutor/')
 
 ## BOOKING
+#schedule
 def schedule(request):
     all_instruments = Instrument.objects.all()
     tutors = Tutor.objects.all()
     all_hours = Hour.objects.all()
+
     return render(request, 'schedule.html', {'all_instruments': all_instruments, \
         'tutors': tutors, 'all_hours': all_hours})
 
 def detail(request, instrument_type):
     all_instruments = Instrument.objects.all()
     all_tutors = Tutor.objects.all()
-    all_availablitys = Availablity.objects.all()
+    all_avail = Availablity.objects.all()
     return render(request, 'instrument_timetable.html', \
-        {'all_instruments': all_instruments, 'all_availablitys': all_availablitys, \
+        {'all_instruments': all_instruments, 'all_avail': all_avail, \
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})
+
+def booking_page(request, pk):
+    avail = get_object_or_404(Availability, id=pk)
+    student = Student.objects.get(user=request.user)
+
+    # booking
+    if request.method == 'POST':
+        form = BookingForm(request.POST, request.FILES)
+        if form.is_valid():
+            # new booking, pass in avail and student
+            new_booking = Booking.objects.create(availability=avail, student=student)
+            new_booking.save()
+            # set booked availability to false
+            avail.available = False
+            avail.save()
+            return render(request, 'booking_confirmed.html') # booking confirmed
+    else:
+        form = BookingForm()
+
+    return render(request, 'booking_form.html', {'form': form, \
+        'avail': avail})
+
+# Book
+def book(request, pk):
+    tutor = get_object_or_404(Tutor, pk=pk)
+    tutors = Tutor.objects.all()
+    avail = Availability.objects.all()
+    #avail = get_object_or_404(Availability, tutor_id=pk)
+
+    return render(request, 'book.html', {
+        'tutors': tutors, 'avail': avail, 'tutor': tutor})
+
+# Confirmation
+def booking_confirmed(request, booking_id):
+    booking = get_object_or_404(Booking, id=id)
+
+    instruments = Instrument.objects.all()
+    tutor = Tutor.objects.all()
+    avail = Availablity.objects.all()
+
+    return render(request, 'booking_confirmed.html', \
+        {'instruments': instruments, 'avail': avail, \
+        'tutor': tutor, })
+
 
 ## PROFILES VIEW/SEARCH
 ## Details
@@ -115,6 +161,9 @@ from django.views.generic import DetailView, TemplateView, ListView
 from django.views.generic.edit import UpdateView
 import functools
 #from django.contrib.auth.mixins import LoginRequiredMixin
+
+class BookedView(generic.TemplateView):
+    template_name = 'booking-confirmed.html';
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'

@@ -25,6 +25,10 @@
         <p><b>Instrument Needed:</b>Yes</p>
         {% elif user.student.instrument_req == False %}
         <p><b>Instrument Needed:</b>No</p>
+
+        <br><p><b>Bookings</b></p>
+        <p>{{ user.student.booking.tutor|capfirst }}</p>
+
         {% endif %}
 
         <br>
