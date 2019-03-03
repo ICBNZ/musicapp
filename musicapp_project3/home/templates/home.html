@@ -31,13 +31,20 @@
   {% elif user.tutor %}
    <div class="home">
       <a href="{% url 'profile' user.id %}">
+
+        <div class="home_white">
         <img src="{% static 'images/profileicon.png' %}" id="icon"/>
+        <h5 id="iconbk"> ACCOUNT </h5>
         <img src="{{ user.tutor.profile_pic.url }}"id="home_pic"/>
+        </div>
       </a>
 
       <a href="{% url 'students' %}">
+          <div class="home_white">
         <img src="{% static 'images/searchicon.png' %}" id="icon"/>
-        <img src="{% static 'images/amp.jpg' %}" id="home_pic"/></a>
+        <h5 id="iconbk"> STUDENTS </h5>
+        <img src="{% static 'images/amp.jpg' %}" id="home_pic"/>
+      </div></a>
    </div>
 
   {% endif %}

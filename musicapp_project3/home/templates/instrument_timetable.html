@@ -13,8 +13,6 @@
     {% if availability.available == True %}
 		<br>
 		<li><a href="..\..\booking/{{availability.pk}}"> {{availability}} </a></li>
-    {% else %}
-    <p> sorry no bookings </p>
     {% endif %}
     {% endif %}
 		{% endfor %}
