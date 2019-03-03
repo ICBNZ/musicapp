@@ -12,21 +12,29 @@
 	<ul>
 		{% for availability in all_avail %}
 		{% if availability.tutor.instrument.name == instrument_type %}
+    {% if availability.available == True %}
 		<br>
 		<li><a href="..\..\booking/{{availability.pk}}"> {{availability}} </a></li>
-		{% endif %}
+    {% endif %}
+    {% endif %}
 		{% endfor %}
+
 		{% for availability in all_avail %}
 		{% if availability.tutor.user.username == instrument_type %}
+    {% if availability.available == True %}
 		<br>
 		<li><a href="..\..\booking/{{availablity.pk}}">{{availability}} </a></li>
-		{% endif %}
+    {% endif %}
+    {% endif %}
 		{% endfor %}
-		{% for availability in all_availablitys %}
+
+		{% for availability in all_avail %}
 		{% if availability.hour.day_of_week == instrument_type %}
+    {% if availability.available == True %}
 		<br>
 		<li><a href="..\..\booking/{{availability.pk}}">{{availability}} </a></li>
-		{% endif %}
+    {% endif %}
+    {% endif %}
 		{% endfor %}
 	</ul>
 </div>

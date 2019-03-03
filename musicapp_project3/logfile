@@ -31,3 +31,5 @@ Traceback (most recent call last):
     all_avail = Availablity.objects.all()
 NameError: name 'Availablity' is not defined
 [03/Mar/2019 20:38:50] ERROR [django.server:154] "GET /home/schedule/Flute/ HTTP/1.1" 500 64271
+[03/Mar/2019 20:42:56] WARNING [django.request:228] Not Found: /home/booking/
+[03/Mar/2019 20:42:56] WARNING [django.server:154] "GET /home/booking/ HTTP/1.1" 404 5663
