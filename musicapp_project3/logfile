@@ -1,9 +1,9 @@
-[03/Mar/2019 20:30:34] INFO [home.views:20] User: Casey logged in
-[03/Mar/2019 20:31:22] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
-[03/Mar/2019 20:31:22] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
-[03/Mar/2019 20:31:54] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
-[03/Mar/2019 20:31:54] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
-[03/Mar/2019 20:31:57] ERROR [django.request:228] Internal Server Error: /home/schedule/Sarah/
+[04/Mar/2019 11:34:42] INFO [home.views:22] User: Casey logged in
+[04/Mar/2019 11:37:55] WARNING [home.views:27] login failed for: Sarah
+[04/Mar/2019 11:38:17] INFO [home.views:22] User: Dave logged in
+[04/Mar/2019 11:39:03] WARNING [home.views:27] login failed for: super
+[04/Mar/2019 11:39:16] INFO [home.views:22] User: super logged in
+[04/Mar/2019 11:40:10] ERROR [django.request:228] Internal Server Error: /home/booking/14/
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
     response = get_response(request)
@@ -11,15 +11,22 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 123, in detail
-    all_avail = Availablity.objects.all()
-NameError: name 'Availablity' is not defined
-[03/Mar/2019 20:31:57] ERROR [django.server:154] "GET /home/schedule/Sarah/ HTTP/1.1" 500 64271
-[03/Mar/2019 20:32:59] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
-[03/Mar/2019 20:32:59] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
-[03/Mar/2019 20:33:02] WARNING [django.request:228] Not Found: /home/schedule/Double Bass
-[03/Mar/2019 20:33:02] WARNING [django.server:154] "GET /home/schedule/Double%20Bass HTTP/1.1" 404 5701
-[03/Mar/2019 20:38:50] ERROR [django.request:228] Internal Server Error: /home/schedule/Flute/
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 144, in booking_page
+    student = Student.objects.get(user=request.user)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 399, in get
+    self.model._meta.object_name
+home.models.Student.DoesNotExist: Student matching query does not exist.
+[04/Mar/2019 11:40:10] ERROR [django.server:154] "GET /home/booking/14/ HTTP/1.1" 500 72363
+[04/Mar/2019 11:43:28] ERROR [django.request:228] Internal Server Error: /home/schedule/Flute/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
     response = get_response(request)
@@ -27,9 +34,41 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 123, in detail
-    all_avail = Availablity.objects.all()
-NameError: name 'Availablity' is not defined
-[03/Mar/2019 20:38:50] ERROR [django.server:154] "GET /home/schedule/Flute/ HTTP/1.1" 500 64271
-[03/Mar/2019 20:42:56] WARNING [django.request:228] Not Found: /home/booking/
-[03/Mar/2019 20:42:56] WARNING [django.server:154] "GET /home/booking/ HTTP/1.1" 404 5663
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 139, in detail
+    'instrument_type': instrument_type, 'all_tutors': all_tutors,})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 104, in find_template
+    template_name, skip=history,
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 534, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 38: 'endif'. Did you forget to register or load this tag?
+[04/Mar/2019 11:43:28] ERROR [django.server:154] "GET /home/schedule/Flute/ HTTP/1.1" 500 160429
+[04/Mar/2019 11:44:21] WARNING [home.views:27] login failed for: Mike
+[04/Mar/2019 11:44:35] INFO [home.views:22] User: Dave logged in

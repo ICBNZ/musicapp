@@ -19,10 +19,10 @@
                       <a href="{% url 'home' %}">Home</a>
                       <a href="{% url 'profile' request.user.id %}">Account</a>
                       <a href="{% url 'about' %}">About</a>
-                      {% if user.student or user.is_superuser %}
+                      {% if user.student %}
                       <a href="{% url 'tutors' %}">Tutors</a>
 			                <a href="..\..\home/schedule/">Schedule</a>
-                      {% elif user.tutor or user.is_superuser %}
+                      {% elif user.tutor %}
                       <a href="{% url 'students' %}">Students</a>
                       {% endif %}
                       <a href="{% url 'logout' %}"><div class="logout">Logout
@@ -31,6 +31,8 @@
             </div>
        </div>
     </div>
+</div>
+
 </div>
       {% endif %}
 
