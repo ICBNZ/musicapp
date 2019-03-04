@@ -1,6 +1,7 @@
 # models.py
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Instrument(models.Model):
@@ -19,6 +20,9 @@ class Tutor(models.Model):
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
 
+    def get_absolute_url(self):
+        return reverse('tutor_detail', kwargs={'pk':self.pk})
+
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
 
@@ -30,6 +34,9 @@ class Student(models.Model):
     instrument_req = models.BooleanField(null=True, blank=True)
     instrument = models.ForeignKey('Instrument', on_delete=models.SET_NULL, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, primary_key=True)
+
+    def get_absolute_url(self):
+        return reverse('student_detail', kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.name + ' - ' + self.instrument.name
@@ -63,7 +70,7 @@ class Availability(models.Model):
             return self.hour.hour + ' ' \
                 + self.hour.day_of_week + ' - Available'
         else:
-            return 'Sorry no availabilities'
+            return ''
 
 class Booking(models.Model):
     availability = models.ForeignKey(Availability, on_delete=models.CASCADE)

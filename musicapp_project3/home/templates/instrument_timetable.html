@@ -7,12 +7,16 @@
 
 <section class="content3">{# white bk #}
 <div class="profile_info">
+    <div class="btn-group2">
 	<ul>
+
 		{% for availability in all_avail %}
 		{% if availability.tutor.instrument.name == instrument_type %}
     {% if availability.available == True %}
 		<br>
-		<li><a href="..\..\booking/{{availability.pk}}"> {{availability}} </a></li>
+		<button class="button2">
+      <a href="..\..\booking/{{availability.pk}}"> {{availability}} </a>
+    </button>
     {% endif %}
     {% endif %}
 		{% endfor %}
@@ -21,7 +25,9 @@
 		{% if availability.tutor.user.username == instrument_type %}
     {% if availability.available == True %}
 		<br>
-		<li><a href="..\..\booking/{{availablity.pk}}">{{availability}} </a></li>
+		<button class="button2">
+      <a href="..\..\booking/{{availablity.pk}}">{{availability}} </a>
+    </button>
     {% endif %}
     {% endif %}
 		{% endfor %}
@@ -30,11 +36,16 @@
 		{% if availability.hour.day_of_week == instrument_type %}
     {% if availability.available == True %}
 		<br>
-		<li><a href="..\..\booking/{{availability.pk}}">{{availability}} </a></li>
+    <button class="button2">
+      <a href="..\..\booking/{{availability.pk}}">{{availability}}</a>
+    </button>
+    <br>
     {% endif %}
     {% endif %}
 		{% endfor %}
+
 	</ul>
+       </div>
 </div>
 <br><br>
 </section>

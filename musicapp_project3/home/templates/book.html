@@ -15,15 +15,13 @@
 
       <p><b>Availabilities (click to book):</b></p>
 
-        {% for avail in avail %}
-        {% if avail.available == True %}
+        {% for availability in availList %}
           <div class="btn-group2">
             <button class="button2">
-              <a href="{% url 'booking' avail.pk %}">{{ avail }}</a>
+              <a href="{% url 'booking' availability.pk %}">{{ availability }}</a>
             </button>
           </div>
-      {% endif %}
-    {% endfor %}
+        {% endfor %}
     </ul>
 
     <br><br>

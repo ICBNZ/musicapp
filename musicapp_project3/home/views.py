@@ -32,13 +32,11 @@ def is_super(user):
         return True
     else:
         return False
-
 def is_tutor(user):
     if user.groups.filter(name='Tutor').exists():
         return True
     else:
         return False
-
 def is_student(user):
     if user.groups.filter(name='Student').exists():
         return True
@@ -101,7 +99,7 @@ def TutorSignup(request):
         form = TutorSignUpForm()
     return render(request, 'registration/tutorsignup.html', {'form': form})
 
-#### Logged In Student Profile
+#### Logged In Profile
 @login_required(login_url="/accounts/login/")
 def profile(request, id):
     user = User.objects.get(id=id)
@@ -111,10 +109,17 @@ def profile(request, id):
 ### redirects to the right profile editor
 @login_required(login_url="/accounts/login/")
 def ProfileEditRedirect(request):
-    if request.user.student:
-        return redirect('/home/profile/edit/student/')
-    if request.user.tutor:
-        return redirect('tutor/')
+    try:
+        if request.user.student:
+            return redirect('/home/profile/edit/student/')
+    except Student.DoesNotExist:
+        print('User not a student')
+    try:
+        if request.user.tutor:
+            return redirect('/home/profile/edit/tutor/')
+    except Tutor.DoesNotExist:
+        print('User not a tutor')
+    return redirect('home')
 
 ## booking
 def schedule(request):
@@ -137,7 +142,6 @@ def booking_page(request, pk):
 
     avail = get_object_or_404(Availability, id=pk)
     student = Student.objects.get(user=request.user)
-
     # booking
     if request.method == 'POST':
         form = BookingForm(request.POST, request.FILES)
@@ -158,11 +162,19 @@ def booking_page(request, pk):
 def book(request, pk):
     tutor = get_object_or_404(Tutor, pk=pk)
     tutors = Tutor.objects.all()
-    avail = Availability.objects.all()
+    all_avail = Availability.objects.all()
+    availList = []
+    try:
+        for avail in all_avail:
+            if(avail.tutor == tutor):
+                if avail.available:
+                    availList.append(avail)
+    except Tutor.DoesNotExist:
+        raise Http404('Tutor not found')
     #avail = get_object_or_404(Availability, tutor_id=pk)
 
     return render(request, 'book.html', {
-        'tutors': tutors, 'avail': avail, 'tutor': tutor})
+        'tutors': tutors, 'all_avail': all_avail, 'tutor': tutor, 'availList': availList})
 
 # Confirmation
 def booking_confirmed(request, booking_id):
@@ -174,7 +186,6 @@ def booking_confirmed(request, booking_id):
     return render(request, 'booking_confirmed.html', \
         {'instruments': instruments, 'avail': avail, \
         'tutor': tutor, })
-
 
 ## PROFILES VIEW/SEARCH
 ## Details
@@ -201,7 +212,7 @@ class BookedView(LoginRequiredMixin, generic.TemplateView):
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
 
-class StudentUpdate(LoginRequiredMixin, UpdateView):
+class StudentUpdate(UpdateView):
     model = Student
     fields = ['profile_pic', 'name', 'about', 'instrument', 'instrument_req']
 
@@ -215,7 +226,7 @@ class StudentUpdate(LoginRequiredMixin, UpdateView):
     def get_object(self):
         return get_object_or_404(Student, pk=Student(user=self.request.user))
 
-class TutorUpdate(LoginRequiredMixin, UpdateView):
+class TutorUpdate(UpdateView):
     model = Tutor
     fields = ['profile_pic', 'name', 'experience', 'instrument', 'instrument_avail']
 
