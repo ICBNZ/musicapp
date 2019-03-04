@@ -363,6 +363,7 @@ input[type=text], [type=about],[type=email], [type=password], [type=logout],sele
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 20px;
+    font-size: 22px;
 }
 input[type=search]{
     width: 300px;
@@ -378,7 +379,7 @@ input[type=search]{
 input[type=about]{
     width: 300px;
     height:200px;
-    font-size: 2px;
+    font-size: 22px;
     padding: 8px 40px 0 0 ;
     margin: 10px 30px 20px 30px ;
     display: inline-block;
@@ -409,7 +410,7 @@ input[type=file],
 input[type=email],
 textarea,select{
   width: 50%!important;
-  font-size: 2px;
+  font-size: 20px;
 }
 .field-div input[type=checkbox]
 {

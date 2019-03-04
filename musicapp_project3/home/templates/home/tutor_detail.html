@@ -9,12 +9,12 @@
 {% block profile %}
 
 <section class="content3">{# white #}
-  <br>
-  <div class="profile_info">
-      <img src="{{ tutor.profile_pic.url }}" id="profile"/>
-  </div>
-  <br>
-    <div class="profile_info">
+      <br>
+      <div class="profile_info">
+          <img src="{{ tutor.profile_pic.url }}" id="profile"/>
+      </div>
+      <br>
+      <div class="profile_info">
 
       <ul>
         <br>
@@ -25,14 +25,16 @@
         <p><b>Price (hr):</b> ${{ tutor.price}}</p>
       </ul>
 
+     {% if user.student %}
       <div class="btn-group2">
         <button class="button2">
           <a href="{% url 'book' tutor.pk %}">Book {{tutor.user.first_name|capfirst}}</a>
         </button>
       </div>
 
-      <br>
-      <br>
+    {% endif %}
+
+      <br><br>
 </section>
 
 {% endblock %}
