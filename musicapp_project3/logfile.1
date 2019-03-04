@@ -1,5 +1,529 @@
-[03/Mar/2019 20:12:57] INFO [home.views:20] User: Casey logged in
-[03/Mar/2019 20:13:57] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
+[03/Mar/2019 23:35:13] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 101, in profile
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:35:13] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 76677
+[03/Mar/2019 23:35:54] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 101, in profile
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:35:54] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 76665
+[03/Mar/2019 23:36:10] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 101, in profile
+    if user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:36:10] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 72920
+[03/Mar/2019 23:36:44] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 101, in profile
+    if user.student != None:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:36:44] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 72936
+[03/Mar/2019 23:36:47] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 101, in profile
+    if user.student != None:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:36:47] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 72948
+[03/Mar/2019 23:42:14] ERROR [django.request:228] Internal Server Error: /home/profile/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 103, in profile
+    return render(request, 'home/profile.html', {'user': user, 'bookings': bookings})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 959, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 810, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 951, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 33: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+[03/Mar/2019 23:42:14] ERROR [django.server:154] "GET /home/profile/2 HTTP/1.1" 500 212453
+[03/Mar/2019 23:43:20] ERROR [django.request:228] Internal Server Error: /home/profile/edit/redirect/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 108, in ProfileEditRedirect
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:43:20] ERROR [django.server:154] "GET /home/profile/edit/redirect/ HTTP/1.1" 500 76481
+[03/Mar/2019 23:44:05] INFO [home.views:22] User: Casey logged in
+[03/Mar/2019 23:45:02] WARNING [django.request:228] Not Found: /home/profile/home/schedule/
+[03/Mar/2019 23:45:02] WARNING [django.server:154] "GET /home/profile/home/schedule/ HTTP/1.1" 404 5705
+[03/Mar/2019 23:45:15] WARNING [django.request:228] Not Found: /home/profile/home/schedule/
+[03/Mar/2019 23:45:15] WARNING [django.server:154] "GET /home/profile/home/schedule/ HTTP/1.1" 404 5705
+[03/Mar/2019 23:45:51] WARNING [django.request:228] Not Found: /home/profile/home/schedule/
+[03/Mar/2019 23:45:51] WARNING [django.server:154] "GET /home/profile/home/schedule/ HTTP/1.1" 404 5705
+[03/Mar/2019 23:48:55] INFO [home.views:22] User: Mike logged in
+[03/Mar/2019 23:49:14] INFO [home.views:22] User: Casey logged in
+[03/Mar/2019 23:49:35] INFO [home.views:22] User: Mike logged in
+[03/Mar/2019 23:49:38] ERROR [django.request:228] Internal Server Error: /home/profile/edit/redirect/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 108, in ProfileEditRedirect
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:49:38] ERROR [django.server:154] "GET /home/profile/edit/redirect/ HTTP/1.1" 500 76481
+[03/Mar/2019 23:54:00] ERROR [django.request:228] Internal Server Error: /home/profile/edit/redirect/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 108, in ProfileEditRedirect
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:54:00] ERROR [django.server:154] "GET /home/profile/edit/redirect/ HTTP/1.1" 500 76479
+[03/Mar/2019 23:54:04] ERROR [django.request:228] Internal Server Error: /home/profile/edit/redirect/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 108, in ProfileEditRedirect
+    if request.user.student:
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 414, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.student.RelatedObjectDoesNotExist: User has no student.
+[03/Mar/2019 23:54:04] ERROR [django.server:154] "GET /home/profile/edit/redirect/ HTTP/1.1" 500 76500
+[04/Mar/2019 00:02:38] WARNING [django.request:228] Not Found: /home/profile/edit/redirect/
+[04/Mar/2019 00:02:38] WARNING [django.server:154] "GET /home/profile/edit/redirect/ HTTP/1.1" 404 6165
+[04/Mar/2019 00:03:04] ERROR [django.request:228] Internal Server Error: /home/profile_tutor/edit/tutor/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 154, in _get_response
+    response = response.render()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 188, in render
+    return template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile tutor' not found. 'profile tutor' is not a valid view function or pattern name.
+[04/Mar/2019 00:03:04] ERROR [django.server:154] "GET /home/profile_tutor/edit/tutor/ HTTP/1.1" 500 163749
+[04/Mar/2019 00:05:06] WARNING [django.request:228] Not Found: /home/profile/2
+[04/Mar/2019 00:05:06] WARNING [django.server:154] "GET /home/profile/2 HTTP/1.1" 404 6126
+[04/Mar/2019 00:05:11] ERROR [django.request:228] Internal Server Error: /home/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 46, in home
+    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile tutor' not found. 'profile tutor' is not a valid view function or pattern name.
+[04/Mar/2019 00:05:11] ERROR [django.server:154] "GET /home/ HTTP/1.1" 500 164952
+[04/Mar/2019 00:06:11] ERROR [django.request:228] Internal Server Error: /home/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 46, in home
+    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+[04/Mar/2019 00:06:11] ERROR [django.server:154] "GET /home/ HTTP/1.1" 500 178867
+[04/Mar/2019 00:06:36] ERROR [django.request:228] Internal Server Error: /home/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 46, in home
+    return render(request, 'home.html', {'tutors': tutors},  {'students': students})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+[04/Mar/2019 00:06:36] ERROR [django.server:154] "GET /home/ HTTP/1.1" 500 178732
+[04/Mar/2019 00:09:36] ERROR [django.request:228] Internal Server Error: /home/profile_tutor/2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/islab/Desktop/MusicApp/musicapp/musicapp_project3/home/views.py", line 115, in profile_tutor
+    return render(request, 'home/profile_tutor.html', {'user': user})
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 39: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+[04/Mar/2019 00:09:36] ERROR [django.server:154] "GET /home/profile_tutor/2 HTTP/1.1" 500 147143
+[04/Mar/2019 00:10:09] ERROR [django.request:228] Internal Server Error: /home/profile_tutor/edit/tutor/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 116, in get_success_url
+    url = self.object.get_absolute_url()
+AttributeError: 'Tutor' object has no attribute 'get_absolute_url'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
     response = get_response(request)
@@ -9,565 +533,19 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
     return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/mixins.py", line 52, in dispatch
+    return super().dispatch(request, *args, **kwargs)
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
     return handler(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 194, in post
+    return super().post(request, *args, **kwargs)
   File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
     return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:13:57] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:13:57] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 59
-[03/Mar/2019 20:13:59] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:00] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:00] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:01] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:01] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:01] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:01] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:01] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:01] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:01] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:01] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:02] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:14:02] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:14:02] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:17:18] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:17:18] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:17:19] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:17:19] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:18:22] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:18:22] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:18:23] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-[03/Mar/2019 20:18:23] ERROR [django.server:154] "POST /accounts/password_reset/ HTTP/1.1" 500 141510
-[03/Mar/2019 20:18:24] ERROR [django.request:228] Internal Server Error: /accounts/password_reset/
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
-    response = get_response(request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 45, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
-    response = view_func(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 220, in dispatch
-    return super().dispatch(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/base.py", line 88, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 142, in post
-    return self.form_valid(form)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/views.py", line 233, in form_valid
-    form.save(**opts)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 295, in save
-    email, html_email_template_name=html_email_template_name,
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 250, in send_mail
-    email_message.send()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/message.py", line 291, in send
-    return self.get_connection(fail_silently).send_messages([self])
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 103, in send_messages
-    new_conn_created = self.open()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 63, in open
-    self.connection = self.connection_class(self.host, self.port, **connection_params)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 251, in __init__
-    (code, msg) = self.connect(host, port)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 336, in connect
-    self.sock = self._get_socket(host, port, self.timeout)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 307, in _get_socket
-    self.source_address)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
-    raise err
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 126, in form_valid
+    return super().form_valid(form)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 57, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/views/generic/edit.py", line 119, in get_success_url
+    "No URL to redirect to.  Either provide a url or define"
+django.core.exceptions.ImproperlyConfigured: No URL to redirect to.  Either provide a url or define a get_absolute_url method on the Model.
+[04/Mar/2019 00:10:09] ERROR [django.server:154] "POST /home/profile_tutor/edit/tutor/ HTTP/1.1" 500 99692

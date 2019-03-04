@@ -27,6 +27,24 @@ def user_login_failed_callback(sender, credentials, **kwargs):
         credentials=credentials['username'],
     ))
 
+def is_super(user):
+    if user.groups.filter(name='Super').exists():
+        return True
+    else:
+        return False
+
+def is_tutor(user):
+    if user.groups.filter(name='Tutor').exists():
+        return True
+    else:
+        return False
+
+def is_student(user):
+    if user.groups.filter(name='Student').exists():
+        return True
+    else:
+        return False
+
 #### Home - passing in tutor/students
 @login_required(login_url="/accounts/login/")
 def home(request):
@@ -83,19 +101,12 @@ def TutorSignup(request):
         form = TutorSignUpForm()
     return render(request, 'registration/tutorsignup.html', {'form': form})
 
-#### Logged In User Profile
+#### Logged In Student Profile
 @login_required(login_url="/accounts/login/")
 def profile(request, id):
     user = User.objects.get(id=id)
-    try:
-        bookings = Booking.objects.all()
-        userBookings= []
-        for book in bookings:
-            if(book.student == user.student):
-               userBookings.append(book)
-    except User.DoesNotExist:
-        raise Http404('User not found')
-    return render(request, 'home/profile.html', {'user': user, 'userBookings': userBookings, 'bookings': bookings})
+    bookings = Booking.objects.all()
+    return render(request, 'home/profile.html', {'user': user, 'bookings': bookings})
 
 ### redirects to the right profile editor
 @login_required(login_url="/accounts/login/")
@@ -123,6 +134,7 @@ def detail(request, instrument_type):
         'instrument_type': instrument_type, 'all_tutors': all_tutors,})
 
 def booking_page(request, pk):
+
     avail = get_object_or_404(Availability, id=pk)
     student = Student.objects.get(user=request.user)
 

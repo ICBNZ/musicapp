@@ -25,14 +25,14 @@
         <p><b>Instrument Needed:</b>Yes</p>
         {% elif user.student.instrument_req == False %}
         <p><b>Instrument Needed:</b>No</p>
-
+        {% endif %}
         <br><p><b>Bookings</b></p>
-
-        {% for booking in userBookings %}
+        {% for booking in bookings %}
+          {% if booking.student == user.student %}
         <p>{{ booking }}</p>
+        {% endif %}
         {% endfor %}
 
-        {% endif %}
         <br>
         {% if request.user == user%}
           <div class="btn-group2">

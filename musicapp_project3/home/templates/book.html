@@ -7,7 +7,7 @@
 
 {% block profile %}
 <section class="content3">
-  <div class="btn-group2">
+
     {# Tutor Availabilities #}
     <ul>
       <p><b>{{tutor.user.first_name|capfirst}} {{tutor.user.last_name|capfirst}}</b></p>
@@ -17,19 +17,23 @@
 
         {% for avail in avail %}
         {% if avail.available == True %}
-
+          <div class="btn-group2">
             <button class="button2">
               <a href="{% url 'booking' avail.pk %}">{{ avail }}</a>
             </button>
-
+          </div>
       {% endif %}
     {% endfor %}
-
-    <br>
-
     </ul>
+
     <br><br>
+    {# Return to Search Tutors #}
+    <div class="btn-group2">
+      <button class="button2">
+        <a href="{% url 'tutors' %}">Search Tutors</a>
+      </button>
     </div>
+
 </section>
 
 
